@@ -5,7 +5,7 @@
                 <div class="navbar-brand flex items-center justify-between shrink px-5 h-[70px] border-r bg-slate-50 border-r-gray-50 dark:border-zinc-700 dark:bg-zinc-800">
                     <a href="#" class="flex items-center font-bold text-lg  dark:text-white">
                         <img src="{{asset('minia/images/logo-sm.svg')}}" alt="" class="ltr:mr-2 rtl:ml-2 inline-block mt-1 h-6" />
-                        <span class="hidden xl:block align-middle">Minia</span>
+                        <span class="hidden xl:block align-middle">SI Zega</span>
                     </a>
                 </div>
                 <button type="button" class="text-gray-600 dark:text-white h-[70px] ltr:-ml-10 ltr:mr-6 rtl:-mr-10 rtl:ml-10 vertical-menu-btn" id="vertical-menu-btn">
@@ -205,7 +205,7 @@
                     <div class="dropdown relative ltr:mr-4 rtl:ml-4">
                         <button type="button" class="flex items-center px-4 py-5 border-x border-gray-50 bg-gray-50/30 dropdown-toggle dark:bg-zinc-700 dark:border-zinc-600 dark:text-gray-100" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <img class="h-8 w-8 rounded-full ltr:xl:mr-2 rtl:xl:ml-2" src="{{asset('minia/images/users/avatar-1.jpg')}}" alt="Header Avatar">
-                            <span class="fw-medium hidden xl:block">Shawn L.</span>
+                            <span class="fw-medium hidden xl:block">{{Auth::user()->name}}</span>
                             <i class="mdi mdi-chevron-down align-bottom hidden xl:block"></i>
                         </button>
                         <div class="dropdown-menu absolute top-0 ltr:-left-3 rtl:-right-3 z-50 hidden w-40 list-none rounded bg-white shadow dark:bg-zinc-800" id="profile/log">

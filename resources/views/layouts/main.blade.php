@@ -164,14 +164,14 @@
     </div>
 
         
-    
+    <!-- 
         <div class="fixed ltr:right-5 rtl:left-5 bottom-10 flex flex-col gap-3 z-40 animate-bounce">
-            <!-- light-dark mode button -->
+            light-dark mode button 
             <a href="javascript: void(0);" id="ltr-rtl" class="px-3.5 py-4 z-40 text-14 transition-all duration-300 ease-linear text-white bg-violet-500 hover:bg-violet-600 rounded-full font-medium" onclick="changeMode(event)">
                 <span class="ltr:hidden">LTR</span>
                 <span  class="rtl:hidden">RTL</span>
             </a>  
-        </div> 
+        </div> -->
 
     <script src="{{asset('minia/libs/@popperjs/core/umd/popper.min.js')}}"></script>
     <script src="{{asset('minia/libs/feather-icons/feather.min.js')}}"></script>

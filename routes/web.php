@@ -15,12 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $title = 'dashboard';
     return view('welcome');
 });
 
 Route::get('/dashboard', function () {
-    return view('miniadashboard');
+    $header = 'Dashboard';
+    $title = 'Dashboard';
+    $page = '';
+    return view('miniadashboard',['header'=>$header, 'title'=>$title, 'page'=>$page]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
