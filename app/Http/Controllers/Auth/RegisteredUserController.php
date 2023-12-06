@@ -33,6 +33,8 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'nik' => ['required','max:16','min:16'],
+            'no_hp' => ['required'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'g-recaptcha-response' => ['required', 'captcha'],
@@ -40,6 +42,8 @@ class RegisteredUserController extends Controller
 
         $user = User::create([
             'name' => $request->name,
+            'nik' => $request->nik,
+            'no_hp' => $request->no_hp,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);

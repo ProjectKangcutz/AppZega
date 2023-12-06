@@ -5,18 +5,13 @@
                 <div class="navbar-brand flex items-center justify-between shrink px-5 h-[70px] border-r bg-slate-50 border-r-gray-50 dark:border-zinc-700 dark:bg-zinc-800">
                     <a href="#" class="flex items-center font-bold text-lg  dark:text-white">
                         <img src="{{asset('minia/images/logo-sm.svg')}}" alt="" class="ltr:mr-2 rtl:ml-2 inline-block mt-1 h-6" />
-                        <span class="hidden xl:block align-middle">App Zega</span>
+                        <span class="hidden xl:block align-middle">PEKANOS</span>
                     </a>
                 </div>
                 <button type="button" class="text-gray-600 dark:text-white h-[70px] ltr:-ml-10 ltr:mr-6 rtl:-mr-10 rtl:ml-10 vertical-menu-btn" id="vertical-menu-btn">
                     <i class="fa fa-fw fa-bars"></i>
                 </button>
-                <form class="app-search hidden xl:block px-5">
-                    <div class="relative inline-block">
-                        <input type="text" class="bg-gray-50/30 dark:bg-zinc-700/50 border-0 rounded focus:ring-0 placeholder:text-sm px-4 dark:placeholder:text-gray-200 dark:text-gray-100 dark:border-zinc-700 " placeholder="Search...">
-                        <button class="py-1.5 px-2.5 text-white bg-violet-500 inline-block absolute ltr:right-1 top-1 rounded shadow shadow-violet-100 dark:shadow-gray-900 rtl:left-1 rtl:right-auto" type="button"><i class="bx bx-search-alt align-middle"></i></button>
-                    </div>
-                </form>
+<h5 class="font-semibold text-gray-700 dark:text-gray-100 text-lg" style="padding-left: 1rem;">PEKANOS <span class="text-gray-400 dark:text-zinc-100/60">Pencatatan Perkawinan Online Sistem</span></h5>
             </div>
             <div class="flex items-center">
 
