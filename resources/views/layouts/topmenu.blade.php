@@ -5,7 +5,7 @@
                 <div class="navbar-brand flex items-center justify-between shrink px-5 h-[70px] border-r bg-slate-50 border-r-gray-50 dark:border-zinc-700 dark:bg-zinc-800">
                     <a href="#" class="flex items-center font-bold text-lg  dark:text-white">
                         <img src="{{asset('minia/images/logo-sm.svg')}}" alt="" class="ltr:mr-2 rtl:ml-2 inline-block mt-1 h-6" />
-                        <span class="hidden xl:block align-middle">SI Zega</span>
+                        <span class="hidden xl:block align-middle">App Zega</span>
                     </a>
                 </div>
                 <button type="button" class="text-gray-600 dark:text-white h-[70px] ltr:-ml-10 ltr:mr-6 rtl:-mr-10 rtl:ml-10 vertical-menu-btn" id="vertical-menu-btn">
@@ -25,7 +25,7 @@
                         <button type="button" class="text-xl px-4 h-[70px] text-gray-600 dark:text-gray-100 dropdown-toggle" data-dropdown-toggle="navNotifications">
                             <i data-feather="search" class="h-5 w-5"></i>
                         </button>
-                    
+
                         <div class="dropdown-menu absolute px-4 -left-36 top-0 mx-4 w-72 z-50 hidden list-none border border-gray-50 rounded bg-white shadow dark:bg-zinc-800 dark:border-zinc-600 dark:text-gray-300" id="navNotifications">
                             <form class="py-3 dropdown-item" aria-labelledby="navNotifications">
                                 <div class="form-group m-0">
@@ -65,39 +65,39 @@
                     <button type="button" class="light-dark-mode text-xl px-4 h-[70px] text-gray-600 dark:text-gray-100 hidden sm:block ">
                         <i data-feather="moon" class="h-5 w-5 block dark:hidden"></i>
                         <i data-feather="sun" class="h-5 w-5 hidden dark:block"></i>
-                </div>
+                    </div>
 
-                <div>
-                    <div class="dropdown relative text-gray-600 hidden sm:block">
-                        <button type="button" class="btn border-0 h-[70px] text-xl px-4 dropdown-toggle dark:text-gray-100" data-bs-toggle="dropdown" id="dropdownMenuButton1">
-                             <i data-feather="grid" class="h-5 w-5"></i>
-                        </button>
-                        <div class="dropdown-menu absolute -left-40 z-50 hidden w-72 list-none border border-gray-50 rounded bg-white shadow dark:bg-zinc-800 dark:border-zinc-600 dark:text-gray-300" aria-labelledby="dropdownMenuButton1">
+                    <div>
+                        <div class="dropdown relative text-gray-600 hidden sm:block">
+                            <button type="button" class="btn border-0 h-[70px] text-xl px-4 dropdown-toggle dark:text-gray-100" data-bs-toggle="dropdown" id="dropdownMenuButton1">
+                               <i data-feather="grid" class="h-5 w-5"></i>
+                           </button>
+                           <div class="dropdown-menu absolute -left-40 z-50 hidden w-72 list-none border border-gray-50 rounded bg-white shadow dark:bg-zinc-800 dark:border-zinc-600 dark:text-gray-300" aria-labelledby="dropdownMenuButton1">
                             <div class="p-2">
                                 <div class="grid grid-cols-3">
                                     <a class="dropdown-item hover:bg-gray-50/50 py-4 text-center dark:hover:bg-zinc-700/50 dark:hover:text-gray-50" href="#">
                                         <img src="{{asset('minia/images/brands/github.png')}}" class="mb-2 mx-auto h-6" alt="Github">
                                         <span>GitHub</span>
                                     </a>
-                                        <a class="dropdown-item hover:bg-gray-50/50 py-4 text-center dark:hover:bg-zinc-700/50 dark:hover:text-gray-50" href="#">
+                                    <a class="dropdown-item hover:bg-gray-50/50 py-4 text-center dark:hover:bg-zinc-700/50 dark:hover:text-gray-50" href="#">
                                         <img src="{{asset('minia/images/brands/bitbucket.png')}}" class="mb-2 mx-auto h-6" alt="Github">
                                         <span>Bitbucket</span>
                                     </a>
-                                        <a class="dropdown-item hover:bg-gray-50/50 py-4 text-center dark:hover:bg-zinc-700/50 dark:hover:text-gray-50" href="#">
+                                    <a class="dropdown-item hover:bg-gray-50/50 py-4 text-center dark:hover:bg-zinc-700/50 dark:hover:text-gray-50" href="#">
                                         <img src="{{asset('minia/images/brands/dribbble.png')}}" class="mb-2 mx-auto h-6" alt="Github">
                                         <span>Dribbble</span>
                                     </a>
                                 </div>
-                                    <div class="grid grid-cols-3">
+                                <div class="grid grid-cols-3">
                                     <a class="dropdown-item hover:bg-gray-50/50 py-4 text-center dark:hover:bg-zinc-700/50 dark:hover:text-gray-50" href="#">
                                         <img src="{{asset('minia/images/brands/dropbox.png')}}" class="mb-2 mx-auto h-6" alt="Github">
                                         <span>Dropbox</span>
                                     </a>
-                                        <a class="dropdown-item hover:bg-gray-50/50 py-4 text-center dark:hover:bg-zinc-700/50 dark:hover:text-gray-50" href="#">
+                                    <a class="dropdown-item hover:bg-gray-50/50 py-4 text-center dark:hover:bg-zinc-700/50 dark:hover:text-gray-50" href="#">
                                         <img src="{{asset('minia/images/brands/mail_chimp.png')}}" class="mb-2 mx-auto h-6" alt="Github">
                                         <span>Mail Chimp</span>
                                     </a>
-                                        <a class="dropdown-item hover:bg-gray-50/50 py-4 text-center dark:hover:bg-zinc-700/50 dark:hover:text-gray-50" href="#">
+                                    <a class="dropdown-item hover:bg-gray-50/50 py-4 text-center dark:hover:bg-zinc-700/50 dark:hover:text-gray-50" href="#">
                                         <img src="{{asset('minia/images/brands/slack.png')}}" class="mb-2 mx-auto h-6" alt="Github">
                                         <span>Slack</span>
                                     </a>
@@ -114,7 +114,7 @@
                             <button type="button" class="btn border-0 h-[70px] dropdown-toggle px-4 text-gray-500 dark:text-gray-100" aria-expanded="false" data-dropdown-toggle="notification">
                                 <i data-feather="bell" class="h-5 w-5"></i>
                             </button>
-                                <span class="absolute text-xs px-1.5 bg-red-500 text-white font-medium rounded-full left-6 top-2.5">5</span>
+                            <span class="absolute text-xs px-1.5 bg-red-500 text-white font-medium rounded-full left-6 top-2.5">5</span>
                         </div>
                         <div class="dropdown-menu absolute z-50 hidden w-80 list-none rounded bg-white shadow dark:bg-zinc-800 " id="notification">
                             <div class="border border-gray-50 dark:border-gray-700 rounded" aria-labelledby="notification">
@@ -222,14 +222,21 @@
                                 </div>
                                 <hr class="border-gray-50 dark:border-gray-700">
                                 <div class="dropdown-item dark:text-gray-100">
-                                    <a class="p-3 hover:bg-gray-50/50 block dark:hover:bg-zinc-700/50" href="logout.html">
-                                        <i class="mdi mdi-logout text-16 align-middle mr-1"></i> Logout
-                                    </a>
-                                </div>
+                                    <form method="POST" action="{{ route('logout') }}" class="p-3 hover:bg-gray-50/50 block dark:hover:bg-zinc-700/50">
+                                        @csrf
+
+                                        <x-dropdown-link :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                                        <i class="mdi mdi-logout text-16 align-middle mr-1"></i>{{ __('Log Out') }}
+                                    </x-dropdown-link>
+                                </form>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
