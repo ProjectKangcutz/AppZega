@@ -3,7 +3,6 @@
 /public/build
 /public/hot
 /public/storage
-/public/minia
 /storage/*.key
 /vendor
 .env
