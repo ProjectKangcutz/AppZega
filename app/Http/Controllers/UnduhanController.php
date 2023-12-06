@@ -15,7 +15,8 @@ class UnduhanController extends Controller
         $header = 'Daftar Unduhan';
         $title = 'Dashboard';
         $page = 'Daftar Unduhan';
-        return view('unduhan.index', compact('header','title','page'));
+        $data = Unduhan::all();
+        return view('unduhan.index', compact('header','title','page','data'));
     }
 
     /**

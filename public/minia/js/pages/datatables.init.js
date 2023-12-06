@@ -7,7 +7,11 @@ File: Datatables Js File
 */
 
 $(document).ready(function() {
-    $('#datatable').DataTable();
+    $('#datatable').DataTable({
+            searchable: true,
+            responsive: true,
+            fixedHeight: false,
+    });
 
     //Buttons examples
     var table = $('#datatable-buttons').DataTable({

@@ -32,7 +32,7 @@
                     <li>
                         <a href="javascript: void(0);" aria-expanded="false" class="nav-menu pl-6 pr-4 py-3 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
                             <i data-feather="grid"></i>
-                            <span data-key="t-apps"> Konfigurasi</span>
+                            <span data-key="t-konfigurasi"> Konfigurasi</span>
                         </a>
                         <ul>
                             <li>
@@ -41,81 +41,15 @@
                             <li>
                                 <a href="app-calendar.html" class="pl-14 pr-4 py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">Kelola Pengguna</a>
                             </li>
-                            <!--
-                            <li>
-                                <a href="app-calendar.html" class="pl-14 pr-4 py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">Calendar</a>
-                            </li>
-                            <li>
-                                <a href="app-chat.html" class="pl-14 pr-4 py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">Chat</a>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" aria-expanded="false" class="nav-menu pl-14 pr-4 py-2 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
-                                    <span data-key="t-apps">Email</span>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="apps-email-inbox.html" class="pl-14 pr-4 py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">Inbox</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-email-read.html" class="pl-14 pr-4 py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">Read Email</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript: void(0);" aria-expanded="false" class="nav-menu pl-14 pr-4 py-2 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
-                                    <span data-key="t-apps">Invoices</span>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="apps-invoices-list.html" class="pl-14 pr-4 py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">Invoice List</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-invoices-detail.html" class="pl-14 pr-4  py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">Invoice Detail</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript: void(0);" aria-expanded="false" class="nav-menu pl-14 pr-4 py-2 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
-                                    <span data-key="t-apps">Contacts</span>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="apps-contacts-grid.html" class="pl-14 pr-4 py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">User Grid</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-contacts-list.html" class="pl-14 pr-4  py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">User List</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-contacts-profile.html" class="pl-14 pr-4  py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">Profile</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript: void(0);" aria-expanded="false" class="flex items-center justify-between pl-14 pr-4 py-2  text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
-                                    <span data-key="t-apps">Blog</span>
-                                    <span class="badge px-2 py-0.5 bg-red-100 text-xs rounded-full font-medium text-red-400 text-end">New</span>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="apps-blog-grid.html" class="pl-14 pr-4 py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">Blog Grid</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-blog-list.html" class="pl-14 pr-4  py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">Blog List</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-blog-detail.html" class="pl-14 pr-4  py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">Blog Details</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        -->
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
 
 
-                <li>
-                    <a href="index.html" class="nav-menu pl-6 pr-4 py-3 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
-                        <i data-feather="layers"></i> Laporan</a>
+                    <li>
+                        <a href="index.html" class="nav-menu pl-6 pr-4 py-3 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
+                            <i data-feather="layers"></i> 
+                            <span data-key="t-laporan"> Laporan </span>
+                        </a>
                         <ul>
                             <li>
                                 <a href="login.html" class="pl-14 pr-4 py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">Login</a>
@@ -146,13 +80,12 @@
 
                     <li>
                         <form method="POST" action="{{ route('logout') }}" class="pl-6 pr-4 py-3 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
-                            @csrf
 
-                            <x-dropdown-link :href="route('logout')"
+                            <a :href="route('logout')"
                             onclick="event.preventDefault();
                             this.closest('form').submit();" hidden>
-                            <i data-feather="log-out"></i><span data-key="t-dashboard">{{ __('Log Out') }}</span>
-                        </x-dropdown-link>
+                            <i data-feather="log-out"></i><span data-key="t-logout">{{ __('Log Out') }}</span>
+                            </a>
                     </form>
                 </li>
 

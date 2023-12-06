@@ -38,69 +38,65 @@
 				<h6 class="mb-1 text-15 text-gray-700 dark:text-gray-100">Silahkan klik Unduh untuk Mengunduh Dokumen</h6>
 			</div>
 			<div class="card-body relative overflow-x-auto">
-				<table id="datatable-buttons" class="table w-full pt-4 text-gray-700 dark:text-zinc-100">
+				<table id="datatable" class="table w-full pt-4 text-gray-700 dark:text-zinc-100">
 					<thead>
 						<tr>
-							<th class="p-4 pr-8 border rtl:border-l-0 border-y-2 border-gray-50 dark:border-zinc-600">Name</th>
-							<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Position</th>
-							<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Office</th>
-							<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Age</th>
-							<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Start date</th>
-							<th class="p-4 pr-8 border rtl:border-l border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Salary</th>
+							<th class="p-4 pr-8 border rtl:border-l-0 border-y-2 border-gray-50 dark:border-zinc-600">No</th>
+							<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Nama File</th>
+							<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Keterangan</th>
+							<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Tanggal</th>
+							<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Download</th>
 						</tr>
 					</thead>
 					<tbody>
+						@php $i=1; @endphp
+						@foreach($data as $item)
 						<tr>
-							<td class="p-4 pr-8 border rtl:border-l-0 border-t-0 border-gray-50 dark:border-zinc-600">Tiger Nixon</td>
-							<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">System Architect</td>
-							<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">Edinburgh</td>
-							<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">61</td>
-							<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">2011/04/25</td>
-							<td class="p-4 pr-8 border rtl:border-l border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">$320,800</td>
-						</tr>
-						<tr>
-							<td class="p-4 pr-8 border rtl:border-l-0 border-t-0 border-gray-50 dark:border-zinc-600">Garrett Winters</td>
-							<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">Accountant</td>
-							<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">Tokyo</td>
-							<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">63</td>
-							<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">2011/07/25</td>
-							<td class="p-4 pr-8 border rtl:border-l border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">$170,750</td>
-						</tr>
-					</tbody>
-				</table>
+							<td class="p-4 pr-8 border rtl:border-l-0 border-t-0 border-gray-50 dark:border-zinc-600">{{$i}}</td>
+							<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->nama_file}}</td>
+							<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->keterangan}}</td>
+							<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->created_at->format('d-m-Y')}}</td>
+							<td class="p-4 pr-8 border rtl:border-l border-t-0 border-l-0 border-gray-50 dark:border-zinc-600"><a href="{{$item->path}}" class="btn text-white bg-green-500 border-green-500 hover:bg-green-600 hover:border-green-600 focus:bg-green-600 focus:border-green-600 focus:ring focus:ring-green-500/30 active:bg-green-600 active:border-green-600"><i class="bx bx-download text-16 align-middle "></i></a>
+								<button type="button" class="btn text-white bg-yellow-500 border-yellow-500 hover:bg-yellow-600 hover:border-yellow-600 focus:bg-yellow-600 focus:border-yellow-600 focus:ring focus:ring-yellow-500/30 active:bg-yellow-600 active:border-yellow-600"><i class="bx bx-edit text-16 align-middle "></i></button>
+								<button type="button" class="btn text-white bg-red-500 border-red-500 hover:bg-red-600 hover:border-red-600 focus:bg-red-600 focus:border-red-600 focus:ring focus:ring-red-500/30 active:bg-red-600 active:border-red-600"><i class="bx bx-trash-alt text-16 align-middle"></i></button></td>
+							</tr>
+							@php $i=$i++; @endphp
+							@endforeach
+						</tbody>
+					</table>
 
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
-<script src="{{asset('minia/libs/@popperjs/core/umd/popper.min.js')}}"></script>
-<script src="{{asset('minia/libs/feather-icons/feather.min.js')}}"></script>
-<script src="{{asset('minia/libs/metismenujs/metismenujs.min.js')}}"></script>
-<script src="{{asset('minia/libs/simplebar/simplebar.min.js')}}"></script>
-<script src="{{asset('minia/libs/feather-icons/feather.min.js')}}"></script>
+	<script src="{{asset('minia/libs/@popperjs/core/umd/popper.min.js')}}"></script>
+	<script src="{{asset('minia/libs/feather-icons/feather.min.js')}}"></script>
+	<script src="{{asset('minia/libs/metismenujs/metismenujs.min.js')}}"></script>
+	<script src="{{asset('minia/libs/simplebar/simplebar.min.js')}}"></script>
+	<script src="{{asset('minia/libs/feather-icons/feather.min.js')}}"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-<!-- Required datatable js -->
-<script src="{{asset('minia/libs/datatables.net/js/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('minia/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<!-- Buttons examples -->
-<script src="{{asset('minia/libs/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
-<script src="{{asset('minia/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js')}}"></script>
-<script src="{{asset('minia/libs/jszip/jszip.min.js')}}"></script>
-<script src="{{asset('minia/libs/pdfmake/build/pdfmake.min.js')}}"></script>
-<script src="{{asset('minia/libs/pdfmake/build/vfs_fonts.js')}}"></script>
-<script src="{{asset('minia/libs/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
-<script src="{{asset('minia/libs/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
-<script src="{{asset('minia/libs/datatables.net-buttons/js/buttons.colVis.min.js')}}"></script>
+	<!-- Required datatable js -->
+	<script src="{{asset('minia/libs/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+	<script src="{{asset('minia/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+	<!-- Buttons examples -->
+	<script src="{{asset('minia/libs/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
+	<script src="{{asset('minia/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js')}}"></script>
+	<script src="{{asset('minia/libs/jszip/jszip.min.js')}}"></script>
+	<script src="{{asset('minia/libs/pdfmake/build/pdfmake.min.js')}}"></script>
+	<script src="{{asset('minia/libs/pdfmake/build/vfs_fonts.js')}}"></script>
+	<script src="{{asset('minia/libs/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
+	<script src="{{asset('minia/libs/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
+	<script src="{{asset('minia/libs/datatables.net-buttons/js/buttons.colVis.min.js')}}"></script>
 
-<!-- Responsive examples -->
-<script src="{{asset('minia/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{asset('minia/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
+	<!-- Responsive examples -->
+	<script src="{{asset('minia/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
+	<script src="{{asset('minia/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
 
-<!-- Datatable init js -->
-<script src="{{asset('minia/js/pages/datatables.init.js')}}"></script> 
+	<!-- Datatable init js -->
+	<script src="{{asset('minia/js/pages/datatables.init.js')}}"></script> 
 
-<script src="{{asset('minia/js/app.js')}}"></script>
-@endsection
+	<script src="{{asset('minia/js/app.js')}}"></script>
+	@endsection
