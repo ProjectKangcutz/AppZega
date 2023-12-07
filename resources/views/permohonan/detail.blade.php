@@ -85,13 +85,17 @@
 							<div class="grid grid-cols-12">
 								<div class="col-span-2">
 									<div>
-										<h5 class="text-15 text-gray-700 dark:text-gray-100">Data :</h5>
+										<h5 class="text-15 text-gray-700 dark:text-gray-100">Permohonan :</h5>
 									</div>
 								</div>
 								<div class="col-span-10">
 									<div class="text-gray-500 dark:text-zinc-100">
-										<p class="mb-2">Hi I'm Phyllis Gatlin, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages</p>
-										<p class="mb-0">It is a long established fact that a reader will be distracted by the readable content of a page when looking at it has a more-or-less normal distribution of letters</p>
+										<p class="mb-2">No. Kartu Keluarga : {{$data->no_kk}}</p>
+										<p class="mb-2">No. Akta/Buku Nikah : {{$data->no_akta_nikah}}</p>
+										<p class="mb-2">Keterangan : {{$data->keterangan}}</p>
+										<p class="mb-2">Tanggal Pengajuan : {{$data->tgl_pengajuan}}</p>
+										<p class="mb-2">Tanggal Proses : {{$data->tgl_proses}}</p>
+										<p class="mb-2">Status : {{$data->status_pengajuan}}</p>
 									</div>
 								</div>
 							</div>
@@ -101,19 +105,57 @@
 							<div class="grid grid-cols-12">
 								<div class="col-span-2">
 									<div>
-										<h5 class="text-15 text-gray-700 dark:text-gray-100">Upload Dokumen :</h5>
+										<h5 class="text-15 text-gray-700 dark:text-gray-100">Suami / Istri :</h5>
 									</div>
 								</div>
 								<div class="col-span-10">
 									<div class="text-gray-500 dark:text-zinc-100">
-										<p>If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc</p>
-
-										<ul class="list-unstyled mb-0 text-gray-500 dark:text-zinc-100 mt-4">
-											<li class="py-1"><i class="mdi mdi-circle-medium ltr:mr-1 rtl:ml-1 text-green-500 align-middle"></i>Donec vitae sapien ut libero venenatis faucibus</li>
-											<li class="py-1"><i class="mdi mdi-circle-medium ltr:mr-1 rtl:ml-1 text-green-500 align-middle"></i>Quisque rutrum aenean imperdiet</li>
-											<li class="py-1"><i class="mdi mdi-circle-medium ltr:mr-1 rtl:ml-1 text-green-500 align-middle"></i>Integer ante a consectetuer eget</li>
-											<li class="py-1"><i class="mdi mdi-circle-medium ltr:mr-1 rtl:ml-1 text-green-500 align-middle"></i>Phasellus nec sem in justo pellentesque</li>
-										</ul>
+										<div class="flex flex-row text-center gap-3">
+											<div class="basis-1/4 bg-gray-50 dark:bg-zinc-600 dark:text-gray-100 p-3 rounded-md">
+												<table class="text-sm text-left text-gray-500">
+													<tr>
+														<td>Nama Suami</td>
+														<td>:</td>
+														<td>{{$data->nama_suami}}</td>
+													</tr>
+													<tr>
+														<td>NIK Suami</td>
+														<td>:</td>
+														<td>{{$data->nik_suami}}</td>
+													</tr>
+													<tr>
+														<td>KTP Suami</td>
+														<td>:</td>
+														<td><a href="/{{$data->upload_ktpsuami}}"><img class="inline-block h-20 w-50 rounded ring-2 ring-white dark:ring-zinc-500" src="{{asset($data->upload_ktpsuami)}}" alt=""></a> </td>
+													</tr>
+												</table>
+											</div>
+											<div class="basis-1/4 bg-gray-50 dark:bg-zinc-600 dark:text-gray-100 p-3 rounded-md">
+												<table class="text-sm text-left text-gray-500">
+													<tr>
+														<td>Nama Istri</td>
+														<td>:</td>
+														<td>{{$data->nama_istri}}</td>
+													</tr>
+													<tr>
+														<td>NIK Istri</td>
+														<td>:</td>
+														<td>{{$data->nik_istri}}</td>
+													</tr>
+													<tr>
+														<td>KTP Istri</td>
+														<td>:</td>
+														<td><a href="/{{$data->upload_ktpistri}}"><img class="inline-block h-20 w-50 rounded ring-2 ring-white dark:ring-zinc-500" src="{{asset($data->upload_ktpistri)}}" alt=""></a> </td>
+													</tr>
+												</table>
+											</div>
+											<div class="basis-1/4 bg-gray-50 dark:bg-zinc-600 dark:text-gray-100 p-3 rounded-md">
+												<a href="/{{$data->upload_kk}}"><img class="inline-block h-100 w-100 rounded ring-2 ring-white dark:ring-zinc-500" src="{{asset($data->upload_kk)}}" alt=""></a>
+											</div>
+											<div class="basis-1/4 bg-gray-50 dark:bg-zinc-600 dark:text-gray-100 p-3 rounded-md">
+												<a href="/{{$data->upload_aktanikah}}"><img class="inline-block h-100 w-100 rounded ring-2 ring-white dark:ring-zinc-500" src="{{asset($data->upload_aktanikah)}}" alt=""></a>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
