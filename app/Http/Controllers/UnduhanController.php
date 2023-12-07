@@ -24,7 +24,11 @@ class UnduhanController extends Controller
      */
     public function create()
     {
-        //
+        $header = 'Daftar Unduhan';
+        $title = 'Dashboard';
+        $page = 'Tambah File';
+        $data = Unduhan::all();
+        return view('unduhan.create', compact('header','title','page','data'));
     }
 
     /**
@@ -32,7 +36,25 @@ class UnduhanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_file' => 'required',
+            'keterangan' => 'required',
+            'file' => 'required|file|max:1024',
+        ]);
+
+        if ($file = $request->file('file')) {
+            $destinationPath = 'unduhan/';
+            $profileFile = date('YmdHis') . "." . $file->getClientOriginalExtension();
+            $simpan = $file->move($destinationPath, $profileFile);
+        }
+
+        $data = Unduhan::create([
+            'nama_file' => $request->nama_file,
+            'keterangan' => $request->keterangan,
+            'path' => $simpan
+        ]);
+        
+        return redirect()->back()->with('success','Data Kematian Berhasil Ditambahkan.');
     }
 
     /**

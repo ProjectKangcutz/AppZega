@@ -35,7 +35,27 @@
 	<div class="col-span-12">
 		<div class="card dark:bg-zinc-800 dark:border-zinc-600">
 			<div class="card-body pb-0">
-				<h6 class="mb-1 text-15 text-gray-700 dark:text-gray-100">Silahkan klik Unduh untuk Mengunduh Dokumen</h6>
+
+                <!-- start grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mt-5">
+                        <div class="col-span-12 lg:col-span-4">
+                           <div class="card dark:bg-zinc-800 dark:border-zinc-600">
+                                <div class="card-body">
+                                    <h6 class="mb-1 text-15 text-gray-700 dark:text-gray-100">Daftar Unduhan</h6>
+                                    <p class="card-text text-gray-600 dark:text-zinc-100">Silahkan Unduh Dokumen yang terdapat pada halaman ini.</p>
+                                    <div class="mt-4">
+                                        <a href="/daftar_unduhan/create" class="btn border-transparent bg-violet-500 block text-center text-white shadow shadow-violet-300 dark:shadow-zinc-600">Tambah File</a>
+                                    </div>    
+                                </div>
+                           </div>
+                        </div>
+                        <div class="col-span-12 lg:col-span-4">
+
+                        </div>
+                    </div>
+                <!-- end grid -->
+                        
+
 			</div>
 			<div class="card-body relative overflow-x-auto">
 				<table id="datatable" class="table w-full pt-4 text-gray-700 dark:text-zinc-100">

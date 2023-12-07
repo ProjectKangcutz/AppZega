@@ -31,6 +31,9 @@
         <!-- Responsive datatable examples -->
         <link href="{{asset('minia/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" /> 
 
+        <!-- Dropzone -->
+        <link href="{{asset('minia/libs/dropzone/min/dropzone.min.css')}}" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body data-mode="light" data-sidebar-size="lg">
