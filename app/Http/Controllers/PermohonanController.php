@@ -27,7 +27,7 @@ class PermohonanController extends Controller
     public function create()
     {
         $header = 'Permohonan';
-        $title = 'Dashboard';
+        $title = 'Permohonan';
         $page = 'Buat Permohonan';
         $data = Permohonan::all();
         return view('permohonan.create', compact('header','title','page','data'));
@@ -113,9 +113,13 @@ class PermohonanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Permohonan $permohonan)
+    public function show($id)
     {
-        //
+        $header = 'Permohonan';
+        $title = 'Permohonan';
+        $page = 'Detail Permohonan';
+        $data = Permohonan::find($id);
+        return view('permohonan.detail', compact('header','title','page','data'));
     }
 
     /**

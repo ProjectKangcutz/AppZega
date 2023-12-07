@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use App\Models\User;
 
 class Permohonan extends Model
 {
@@ -29,4 +31,9 @@ class Permohonan extends Model
         'aktif',
         'status_pengajuan'
     ];
+
+    public function user(): HasOne
+    {
+        return $this->hasOne(User::class, 'id', 'id_user');
+    }
 }

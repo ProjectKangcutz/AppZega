@@ -5,9 +5,11 @@
                     &copy;
                     <script>
                         document.write(new Date().getFullYear());
-                    </script> Minia
+                    </script> Pekanos
                 </div>
-                <div class="hidden md:inline-block text-end">Design & Develop by <a href="" class="text-violet-500 underline">Themesbrand</a></div>
+                <div class="hidden md:inline-block text-end">Pencatatan Perkawinan Online Sistem &copy; <script>
+                        document.write(new Date().getFullYear());
+                    </script></div>
 
             </div>
         </footer>
