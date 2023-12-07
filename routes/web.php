@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UnduhanController;
+use App\Http\Controllers\PetunjukController;
+use App\Http\Controllers\PermohonanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('daftar_unduhan',UnduhanController::class);
+    Route::resource('petunjuk',PetunjukController::class);
+    Route::resource('permohonan',PermohonanController::class);
 });
 
 require __DIR__.'/auth.php';

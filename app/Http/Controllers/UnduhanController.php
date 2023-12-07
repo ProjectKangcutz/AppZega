@@ -54,7 +54,7 @@ class UnduhanController extends Controller
             'path' => $simpan
         ]);
         
-        return redirect()->back()->with('success','Data Kematian Berhasil Ditambahkan.');
+        return redirect()->back()->with('success','File Berhasil Ditambahkan.');
     }
 
     /**

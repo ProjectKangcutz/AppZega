@@ -16,6 +16,21 @@
                     </li>
 
                     <li>
+                        <a href="javascript: void(0);" class="nav-menu pl-6 pr-4 py-3 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
+                            <i data-feather="file-plus"></i>
+                            <span data-key="t-permohonan"> Permohonan</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="/permohonan" class="pl-14 pr-4 py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">Permohonan</a>
+                            </li>
+                            <li>
+                                <a href="/permohonan/create" class="pl-14 pr-4 py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">Buat Permohonan</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
                         <a href="/daftar_unduhan" class="pl-6 pr-4 py-3 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
                             <i data-feather="download"></i>
                             <span data-key="t-unduhan"> Daftar Unduhan</span>
@@ -23,7 +38,7 @@
                     </li>
 
                     <li>
-                        <a href="/dashboard" class="pl-6 pr-4 py-3 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
+                        <a href="/petunjuk" class="pl-6 pr-4 py-3 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
                             <i data-feather="paperclip"></i>
                             <span data-key="t-petunjuk"> Petunjuk Penggunaan</span>
                         </a>
@@ -85,7 +100,7 @@
                             onclick="event.preventDefault();
                             this.closest('form').submit();" hidden>
                             <i data-feather="log-out"></i><span data-key="t-logout">{{ __('Log Out') }}</span>
-                            </a>
+                        </a>
                     </form>
                 </li>
 
