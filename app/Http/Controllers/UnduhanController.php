@@ -84,8 +84,12 @@ class UnduhanController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Unduhan $unduhan)
+    public function destroy($id)
     {
-        //
+        $data = Unduhan::find($id);
+        $data->delete();
+         
+        return redirect()->route('daftar_unduhan.index')
+                        ->with('success','File deleted successfully');
     }
 }

@@ -49,22 +49,22 @@
                                 <p class="text-gray-500 mt-1 dark:text-zinc-100/60">Get your free Minia account now.</p>
                             </div>
 
-                            @if ($message = Session::get('success'))
-                            <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
-                                <p>{{ $message }}</p>
-                            </div>
-                            @endif
+                @if ($message = Session::get('success'))
+                <div class="card p-5 rounded bg-green-600 border-green-600">
+                    <p class="text-white/60">{{ $message }}</p>
+                </div>
+                @endif
 
-                            @if ($errors->any())
-                            <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
-                                <span class="font-medium">Whoops!</span> Mohon maaf ada kesalahan dalam input anda :<br><br>
-                                <ul>
-                                  @foreach ($errors->all() as $error)
-                                  <li>{{ $error }}</li>
-                                  @endforeach
-                              </ul>
-                          </div>
-                          @endif
+                @if ($errors->any())
+                <div class="card p-5 rounded bg-red-400 border-red-400">
+                    <p class="text-white/60"><span class="font-medium">Whoops!</span> Mohon maaf ada kesalahan dalam input anda :<br><br></p>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
 
                           <form class="mt-4 pt-2" action="{{ route('register') }}" method="POST">
                             @csrf

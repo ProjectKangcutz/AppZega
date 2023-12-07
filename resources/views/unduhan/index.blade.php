@@ -36,25 +36,40 @@
 		<div class="card dark:bg-zinc-800 dark:border-zinc-600">
 			<div class="card-body pb-0">
 
-                <!-- start grid -->
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mt-5">
-                        <div class="col-span-12 lg:col-span-4">
-                           <div class="card dark:bg-zinc-800 dark:border-zinc-600">
-                                <div class="card-body">
-                                    <h6 class="mb-1 text-15 text-gray-700 dark:text-gray-100">Daftar Unduhan</h6>
-                                    <p class="card-text text-gray-600 dark:text-zinc-100">Silahkan Unduh Dokumen yang terdapat pada halaman ini.</p>
-                                    <div class="mt-4">
-                                        <a href="/daftar_unduhan/create" class="btn border-transparent bg-violet-500 block text-center text-white shadow shadow-violet-300 dark:shadow-zinc-600">Tambah File</a>
-                                    </div>    
-                                </div>
-                           </div>
-                        </div>
-                        <div class="col-span-12 lg:col-span-4">
+				<!-- start grid -->
+				<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mt-5">
+					<div class="col-span-12 lg:col-span-4">
+						<div class="card dark:bg-zinc-800 dark:border-zinc-600">
+							<div class="card-body">
+								<h6 class="mb-1 text-15 text-gray-700 dark:text-gray-100">Daftar Unduhan</h6>
+								<p class="card-text text-gray-600 dark:text-zinc-100">Silahkan Unduh Dokumen yang terdapat pada halaman ini.</p>
+								<div class="mt-4">
+									<a href="/daftar_unduhan/create" class="btn border-transparent bg-violet-500 block text-center text-white shadow shadow-violet-300 dark:shadow-zinc-600">Tambah File</a>
+								</div>    
+							</div>
+						</div>
+					</div>
+					<div class="col-span-12 lg:col-span-4">
+						@if ($message = Session::get('success'))
+						<div class="card p-5 rounded bg-green-600 border-green-600">
+							<p class="text-white/60">{{ $message }}</p>
+						</div>
+						@endif
 
-                        </div>
-                    </div>
-                <!-- end grid -->
-                        
+						@if ($errors->any())
+						<div class="card p-5 rounded bg-red-400 border-red-400">
+							<p class="text-white/60"><span class="font-medium">Whoops!</span> Mohon maaf ada kesalahan dalam input anda :<br><br></p>
+							<ul>
+								@foreach ($errors->all() as $error)
+								<li>{{ $error }}</li>
+								@endforeach
+							</ul>
+						</div>
+						@endif
+					</div>
+				</div>
+				<!-- end grid -->
+
 
 			</div>
 			<div class="card-body relative overflow-x-auto">
@@ -76,9 +91,14 @@
 							<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->nama_file}}</td>
 							<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->keterangan}}</td>
 							<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->created_at->format('d-m-Y')}}</td>
-							<td class="p-4 pr-8 border rtl:border-l border-t-0 border-l-0 border-gray-50 dark:border-zinc-600"><a href="{{$item->path}}" class="btn text-white bg-green-500 border-green-500 hover:bg-green-600 hover:border-green-600 focus:bg-green-600 focus:border-green-600 focus:ring focus:ring-green-500/30 active:bg-green-600 active:border-green-600"><i class="bx bx-download text-16 align-middle "></i></a>
-								<button type="button" class="btn text-white bg-yellow-500 border-yellow-500 hover:bg-yellow-600 hover:border-yellow-600 focus:bg-yellow-600 focus:border-yellow-600 focus:ring focus:ring-yellow-500/30 active:bg-yellow-600 active:border-yellow-600"><i class="bx bx-edit text-16 align-middle "></i></button>
-								<button type="button" class="btn text-white bg-red-500 border-red-500 hover:bg-red-600 hover:border-red-600 focus:bg-red-600 focus:border-red-600 focus:ring focus:ring-red-500/30 active:bg-red-600 active:border-red-600"><i class="bx bx-trash-alt text-16 align-middle"></i></button></td>
+							<td class="p-4 pr-8 border rtl:border-l border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">
+								<form action="{{ route('daftar_unduhan.destroy',$item->id) }}" method="POST">
+									<a href="{{$item->path}}" class="btn text-white bg-green-500 border-green-500 hover:bg-green-600 hover:border-green-600 focus:bg-green-600 focus:border-green-600 focus:ring focus:ring-green-500/30 active:bg-green-600 active:border-green-600"><i class="bx bx-download text-16 align-middle "></i></a>
+									@csrf
+									@method('DELETE')
+
+									<button type="submit" class="btn text-white bg-red-500 border-red-500 hover:bg-red-600 hover:border-red-600 focus:bg-red-600 focus:border-red-600 focus:ring focus:ring-red-500/30 active:bg-red-600 active:border-red-600"><i class="bx bx-trash-alt text-16 align-middle"></i></button>
+								</td>
 							</tr>
 							@php $i=$i++; @endphp
 							@endforeach

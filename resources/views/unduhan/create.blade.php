@@ -38,14 +38,14 @@
 			</div>
 			<div class="card-body">
 				@if ($message = Session::get('success'))
-				<div class="alert alert-success">
-					<p>{{ $message }}</p>
+				<div class="card p-5 rounded bg-green-600 border-green-600">
+					<p class="text-white/60">{{ $message }}</p>
 				</div>
 				@endif
 
 				@if ($errors->any())
-				<div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
-					<span class="font-medium">Whoops!</span> Mohon maaf ada kesalahan dalam input anda :<br><br>
+				<div class="card p-5 rounded bg-red-400 border-red-400">
+					<p class="text-white/60"><span class="font-medium">Whoops!</span> Mohon maaf ada kesalahan dalam input anda :<br><br></p>
 					<ul>
 						@foreach ($errors->all() as $error)
 						<li>{{ $error }}</li>
