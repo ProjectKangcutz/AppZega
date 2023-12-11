@@ -28,7 +28,6 @@
 				</nav>
 			</div>
 		</div>
-
 	</div>
 
 	<div class="grid grid-cols-1">

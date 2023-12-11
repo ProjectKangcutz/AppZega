@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UnduhanController;
 use App\Http\Controllers\PetunjukController;
 use App\Http\Controllers\PermohonanController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::get('/user_pengguna', [UserController::class, 'indexpengguna'])->name('pengguna.index');
+    Route::resource('user',UserController::class);
     Route::resource('daftar_unduhan',UnduhanController::class);
     Route::resource('petunjuk',PetunjukController::class);
     Route::resource('permohonan',PermohonanController::class);

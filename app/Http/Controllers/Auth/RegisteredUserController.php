@@ -45,6 +45,7 @@ class RegisteredUserController extends Controller
             'nik' => $request->nik,
             'no_hp' => $request->no_hp,
             'email' => $request->email,
+            'level_id' => 3,
             'password' => Hash::make($request->password),
         ]);
 

@@ -28,6 +28,7 @@
 				</nav>
 			</div>
 		</div>
+	</div>
 
 
 		<div class="col-span-12">
@@ -64,11 +65,11 @@
 						<thead>
 							<tr>
 								<th class="p-4 pr-8 border rtl:border-l-0 border-y-2 border-gray-50 dark:border-zinc-600">No</th>
-								<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Tanggal Pengajuan</th>
-								<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Tanggal Proses</th>
-								<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">No Kartu Keluarga</th>
-								<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Keterangan</th>
-								<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Status Pengajuan</th>
+								<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Nama Lengkap</th>
+								<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">NIK</th>
+								<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">No HP</th>
+								<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Email</th>
+								<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Tanggal Daftar</th>
 								<th class="p-4 pr-8 border border-y-2 border-gray-50 dark:border-zinc-600 border-l-0">Aksi</th>
 							</tr>
 						</thead>
@@ -77,15 +78,15 @@
 							@foreach($data as $item)
 							<tr>
 								<td class="p-4 pr-8 border rtl:border-l-0 border-t-0 border-gray-50 dark:border-zinc-600">{{$i}}</td>
-								<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->tgl_pengajuan}}</td>
-								<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->tgl_proses}}</td>
-								<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->no_kk}}</td>
-								<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->keterangan}}</td>
-								<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->status_pengajuan}}</td>
+								<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->name}}</td>
+								<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->nik}}</td>
+								<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->no_hp}}</td>
+								<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->email}}</td>
+								<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->created_at}}</td>
 								<td class="p-4 pr-8 border rtl:border-l border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">
-									<form action="#" method="POST">
-										<a href="#" class="btn text-white bg-green-500 border-green-500 hover:bg-green-600 hover:border-green-600 focus:bg-green-600 focus:border-green-600 focus:ring focus:ring-green-500/30 active:bg-green-600 active:border-green-600"><i class="bx bx-show-alt text-16 align-middle "></i></a>
-										<a href="#" class="btn text-white bg-yellow-500 border-yellow-500 hover:bg-yellow-600 hover:border-yellow-600 focus:bg-yellow-600 focus:border-yellow-600 focus:ring focus:ring-yellow-500/30 active:bg-yellow-600 active:border-yellow-600"><i class="bx bx-edit-alt text-16 align-middle "></i></a>
+									<form action="{{ route('user.destroy',$item->id) }}" method="POST">
+										<a href="{{route('user.show',$item->id)}}" class="btn text-white bg-green-500 border-green-500 hover:bg-green-600 hover:border-green-600 focus:bg-green-600 focus:border-green-600 focus:ring focus:ring-green-500/30 active:bg-green-600 active:border-green-600"><i class="bx bx-show-alt text-16 align-middle "></i></a>
+										<a href="{{route('user.edit',$item->id)}}" class="btn text-white bg-yellow-500 border-yellow-500 hover:bg-yellow-600 hover:border-yellow-600 focus:bg-yellow-600 focus:border-yellow-600 focus:ring focus:ring-yellow-500/30 active:bg-yellow-600 active:border-yellow-600"><i class="bx bx-edit-alt text-16 align-middle "></i></a>
 										@csrf
 										@method('DELETE')
 
