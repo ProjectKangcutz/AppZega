@@ -95,19 +95,26 @@
 									<div class="col-span-10">
 										<div class="text-gray-500 dark:text-zinc-100">
 											<table class="table w-full pt-4 text-gray-700 dark:text-zinc-100">
-												<thead>
-													<tr>
-														<th>Log Aktifitas</th>
-														<th>Timeline</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Log</td>
-														<td>Tanggal</td>
-													</tr>
-													
-												</tbody>
+												<tr>
+													<th>No</th>
+													<th>Subject</th>
+													<th>URL</th>
+													<th>Method</th>
+													<th>Ip</th>
+													<th width="300px">User Agent</th>
+												</tr>
+												@if($logs->count())
+												@foreach($logs as $key => $log)
+												<tr>
+													<td>{{ ++$key }}</td>
+													<td>{{ $log->subject }}</td>
+													<td class="text-success">{{ $log->url }}</td>
+													<td><label class="label label-info">{{ $log->method }}</label></td>
+													<td class="text-warning">{{ $log->ip }}</td>
+													<td class="text-danger">{{ $log->agent }}</td>
+												</tr>
+												@endforeach
+												@endif
 											</table>
 										</div>
 									</div>

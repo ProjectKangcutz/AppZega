@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use App\LogActivity;
+use App\Models\LogActivity as LogActivityModel;
+use Auth;
 
 class UserController extends Controller
 {
@@ -80,8 +82,9 @@ class UserController extends Controller
         $title = 'Detail';
         $page = 'Detail User';
         $data = User::find($id);
-        \LogActivity::addToLog('Membuka Detail Operator '.$data->name.'');
-        return view('user.detail', compact('header','title','page','data'));
+        $logs = LogActivityModel::where('user_id',$data->id)->get();
+        \LogActivity::addToLog('Membuka Detail User '.$data->name.'');
+        return view('user.detail', compact('header','title','page','data','logs'));
     }
 
     /**
