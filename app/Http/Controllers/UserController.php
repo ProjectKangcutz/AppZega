@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use App\LogActivity;
 
 class UserController extends Controller
 {
@@ -63,6 +64,7 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        \LogActivity::addToLog('Menambahkan User Operator '.$request->name.'');
         return redirect()->back()->with('success','User Operator Berhasil Ditambahkan.');
     }
 

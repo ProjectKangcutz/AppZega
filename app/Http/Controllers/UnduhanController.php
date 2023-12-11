@@ -54,6 +54,7 @@ class UnduhanController extends Controller
             'path' => $simpan
         ]);
         
+        \LogActivity::addToLog('Menambahkan Unduhan '.$request->nama_file.'');
         return redirect()->back()->with('success','File Berhasil Ditambahkan.');
     }
 

@@ -107,6 +107,7 @@ class PermohonanController extends Controller
             'status_pengajuan' => 1
         ]); 
         
+        \LogActivity::addToLog('Menambahkan Permohonan '.$request->no_kk.'');
         return redirect()->back()->with('success','Permohonan Berhasil Ditambahkan.');
     }
 
@@ -119,6 +120,7 @@ class PermohonanController extends Controller
         $title = 'Permohonan';
         $page = 'Detail Permohonan';
         $data = Permohonan::find($id);
+        \LogActivity::addToLog('Melihat Permohonan '.$data->no_kk.'');
         return view('permohonan.detail', compact('header','title','page','data'));
     }
 
