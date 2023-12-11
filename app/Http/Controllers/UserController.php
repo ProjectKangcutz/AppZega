@@ -19,6 +19,7 @@ class UserController extends Controller
         $title = 'Konfigurasi';
         $page = 'User Operator';
         $data = User::where('level_id','2')->get();
+        \LogActivity::addToLog('Membuka Halaman User Operator ');
         return view('user.index', compact('header','title','page','data'));
     }
 
@@ -28,6 +29,7 @@ class UserController extends Controller
         $title = 'Konfigurasi';
         $page = 'User Pengguna';
         $data = User::where('level_id','3')->get();
+        \LogActivity::addToLog('Membuka Halaman User Pengguna');
         return view('user.indexpengguna', compact('header','title','page','data'));
     }
 
@@ -39,6 +41,7 @@ class UserController extends Controller
         $header = 'User Operator';
         $title = 'Konfigurasi';
         $page = 'User Operator';
+        \LogActivity::addToLog('Membuka Halaman Tambah Operator');
         return view('user.create', compact('header','title','page'));
     }
 
@@ -77,6 +80,7 @@ class UserController extends Controller
         $title = 'Detail';
         $page = 'Detail User';
         $data = User::find($id);
+        \LogActivity::addToLog('Membuka Detail Operator '.$data->name.'');
         return view('user.detail', compact('header','title','page','data'));
     }
 

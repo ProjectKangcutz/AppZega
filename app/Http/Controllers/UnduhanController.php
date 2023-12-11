@@ -16,6 +16,7 @@ class UnduhanController extends Controller
         $title = 'Dashboard';
         $page = 'Daftar Unduhan';
         $data = Unduhan::all();
+        \LogActivity::addToLog('Membuka Halaman Unduhan');
         return view('unduhan.index', compact('header','title','page','data'));
     }
 
@@ -28,6 +29,7 @@ class UnduhanController extends Controller
         $title = 'Dashboard';
         $page = 'Tambah File';
         $data = Unduhan::all();
+        \LogActivity::addToLog('Membuka Halaman Unduhan');
         return view('unduhan.create', compact('header','title','page','data'));
     }
 

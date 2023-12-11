@@ -49,6 +49,8 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        \LogActivity::addToLog('Register User Pengguna '.$request->name.'');
+
         event(new Registered($user));
 
         Auth::login($user);

@@ -107,7 +107,7 @@
 								</form>
 							</td>
 						</tr>
-						@php $i=$i++; @endphp
+						@php $i=$i+1; @endphp
 						@endforeach
 					</tbody>
 				</table>

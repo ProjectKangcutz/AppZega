@@ -16,6 +16,7 @@ class PetunjukController extends Controller
         $title = 'Dashboard';
         $page = 'Petunjuk Penggunaan';
         $data = Petunjuk::all();
+        \LogActivity::addToLog('Membuka Halaman Petunjuk');
         return view('petunjuk.index', compact('header','title','page','data'));
     }
 

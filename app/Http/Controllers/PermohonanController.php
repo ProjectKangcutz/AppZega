@@ -18,6 +18,7 @@ class PermohonanController extends Controller
         $title = 'Dashboard';
         $page = 'Buat Permohonan';
         $data = Permohonan::all();
+        \LogActivity::addToLog('Membuka Halaman Permohonan');
         return view('permohonan.index', compact('header','title','page','data'));
     }
 
@@ -30,6 +31,7 @@ class PermohonanController extends Controller
         $title = 'Permohonan';
         $page = 'Buat Permohonan';
         $data = Permohonan::all();
+        \LogActivity::addToLog('Membuka Halaman Buat Permohonan');
         return view('permohonan.create', compact('header','title','page','data'));
     }
 
@@ -120,7 +122,7 @@ class PermohonanController extends Controller
         $title = 'Permohonan';
         $page = 'Detail Permohonan';
         $data = Permohonan::find($id);
-        \LogActivity::addToLog('Melihat Permohonan '.$data->no_kk.'');
+        \LogActivity::addToLog('Membuka Permohonan '.$data->no_kk.'');
         return view('permohonan.detail', compact('header','title','page','data'));
     }
 
