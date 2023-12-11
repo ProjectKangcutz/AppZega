@@ -8,7 +8,7 @@ File: Form editor Init Js File
 
 
 ClassicEditor
-    .create( document.querySelector( '#ckeditor-classic' ) )
+    .create( document.querySelector( '#ckeditor-classic' ))
     .then( function(editor) {
         editor.ui.view.editable.element.style.height = '200px';
     } )
