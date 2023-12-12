@@ -6,6 +6,7 @@ use App\Models\Permohonan;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Auth;
+use PDF;
 
 class PermohonanController extends Controller
 {
@@ -148,5 +149,16 @@ class PermohonanController extends Controller
     public function destroy(Permohonan $permohonan)
     {
         //
+    }
+
+    public function generatepdf($id)
+    {
+        $permohonan=Permohonan::find($id);
+        $data = [
+            'title' => 'Permohonan Pekanos',
+            'permohonan' => $permohonan
+        ];
+        $pdf = PDF::loadView('permohonan.pdf', $data);
+        return $pdf->download('permohonan.pdf');
     }
 }

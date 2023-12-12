@@ -122,7 +122,7 @@ class UserController extends Controller
             'email' => $request->email,
             'level_id' => $request->level_id
         ]);
-
+        \LogActivity::addToLog('Melakukan Perubahan Detail User '.$data->name.'');
         return redirect()->route('user.index')->with('success','User Has Been updated successfully');
     }
 
@@ -136,15 +136,21 @@ class UserController extends Controller
         $data->update([
             'password' => Hash::make($request->password)
         ]);
-
+        \LogActivity::addToLog('Mengubah Password User '.$data->name.'');
         return redirect()->route('user.index')->with('success','Password Been updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $data = User::find($id);
+        $data->delete();
+        \LogActivity::addToLog('Menghapus User '.$data->name.'');
+        return redirect()->route('user.index')
+                        ->with('success','User deleted successfully');
     }
+
+    
 }

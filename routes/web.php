@@ -40,6 +40,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('user',UserController::class);
     Route::resource('daftar_unduhan',UnduhanController::class);
     Route::resource('petunjuk',PetunjukController::class);
+
+    Route::get('/permohonan/{id}/generatepdf', [PermohonanController::class, 'generatepdf'])->name('permohonan.generatepdf');
     Route::resource('permohonan',PermohonanController::class);
 });
 
