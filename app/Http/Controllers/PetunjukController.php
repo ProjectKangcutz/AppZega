@@ -33,7 +33,18 @@ class PetunjukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'judul' => 'required',
+            'artikel' => 'required',
+        ]);
+
+        $data = Petunjuk::create([
+            'judul' => $request->judul,
+            'artikel' => $request->artikel,
+        ]);
+
+        \LogActivity::addToLog('Menambahkan Artikel Petunjuk '.$request->judul.'');
+        return redirect()->back()->with('success','Artikel Petunjuk Berhasil Ditambahkan.');
     }
 
     /**
@@ -63,8 +74,12 @@ class PetunjukController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Petunjuk $petunjuk)
+    public function destroy($id)
     {
-        //
+        $data = Petunjuk::find($id);
+        $data->delete();
+
+        return redirect()->route('petunjuk.index')
+        ->with('success','File deleted successfully');
     }
 }

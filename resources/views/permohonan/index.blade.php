@@ -83,9 +83,9 @@
 								<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->keterangan}}</td>
 								<td class="p-4 pr-8 border border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">{{$item->status_pengajuan}}</td>
 								<td class="p-4 pr-8 border rtl:border-l border-t-0 border-l-0 border-gray-50 dark:border-zinc-600">
-									<form action="#" method="POST">
-										<a href="#" class="btn text-white bg-green-500 border-green-500 hover:bg-green-600 hover:border-green-600 focus:bg-green-600 focus:border-green-600 focus:ring focus:ring-green-500/30 active:bg-green-600 active:border-green-600"><i class="bx bx-show-alt text-16 align-middle "></i></a>
-										<a href="#" class="btn text-white bg-yellow-500 border-yellow-500 hover:bg-yellow-600 hover:border-yellow-600 focus:bg-yellow-600 focus:border-yellow-600 focus:ring focus:ring-yellow-500/30 active:bg-yellow-600 active:border-yellow-600"><i class="bx bx-edit-alt text-16 align-middle "></i></a>
+									<form action="{{route('permohonan.destroy',$item->id)}}" method="POST">
+										<a href="{{route('permohonan.show',$item->id)}}" class="btn text-white bg-green-500 border-green-500 hover:bg-green-600 hover:border-green-600 focus:bg-green-600 focus:border-green-600 focus:ring focus:ring-green-500/30 active:bg-green-600 active:border-green-600"><i class="bx bx-show-alt text-16 align-middle "></i></a>
+										<a href="{{route('permohonan.edit',$item->id)}}" class="btn text-white bg-yellow-500 border-yellow-500 hover:bg-yellow-600 hover:border-yellow-600 focus:bg-yellow-600 focus:border-yellow-600 focus:ring focus:ring-yellow-500/30 active:bg-yellow-600 active:border-yellow-600"><i class="bx bx-edit-alt text-16 align-middle "></i></a>
 										@csrf
 										@method('DELETE')
 

@@ -22,9 +22,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('add-to-log', 'HomeController@myTestAddToLog');
-Route::get('logActivity', 'HomeController@logActivity');
-
 Route::get('/dashboard', function () {
     $header = 'Dashboard';
     $title = 'Dashboard';

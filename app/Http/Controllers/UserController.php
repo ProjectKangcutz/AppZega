@@ -90,17 +90,40 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $header = 'User';
+        $title = 'Detail';
+        $page = 'Detail User';
+        $data = User::find($id);
+        $logs = LogActivityModel::where('user_id',$data->id)->get();
+        \LogActivity::addToLog('Membuka Edit User '.$data->name.'');
+        return view('user.edit', compact('header','title','page','data','logs'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'nik' => ['required','max:16','min:16'],
+            'no_hp' => 'required',
+            'email' => 'required',
+            'level_id' => 'required'
+        ]);
+
+        $data = User::find($id);
+        $data->update([
+            'name' => $request->name,
+            'nik' => $request->nik,
+            'no_hp' => $request->no_hp,
+            'email' => $request->email,
+            'level_id' => $request->level_id
+        ]);
+
+         return redirect()->route('users.index')->with('success','User Has Been updated successfully');
     }
 
     /**
