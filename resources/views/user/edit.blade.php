@@ -139,7 +139,7 @@
 										</div>
 									</div>
 									<div class="col-span-10">
-										<form>
+										<form  action="{{route('user.updatepass',$data->id)}}" method="get">
 											@csrf
 											<div class="card-body">
 												<div class="mb-4">

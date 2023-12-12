@@ -123,7 +123,21 @@ class UserController extends Controller
             'level_id' => $request->level_id
         ]);
 
-         return redirect()->route('user.index')->with('success','User Has Been updated successfully');
+        return redirect()->route('user.index')->with('success','User Has Been updated successfully');
+    }
+
+    public function updatepass(Request $request, $id)
+    {
+        $request->validate([
+            'password' => ['required', 'confirmed', Rules\Password::defaults()]
+        ]);
+
+        $data = User::find($id);
+        $data->update([
+            'password' => Hash::make($request->password)
+        ]);
+
+        return redirect()->route('user.index')->with('success','Password Been updated successfully');
     }
 
     /**
