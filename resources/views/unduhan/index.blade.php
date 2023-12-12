@@ -36,6 +36,7 @@
 		<div class="card dark:bg-zinc-800 dark:border-zinc-600">
 			<div class="card-body pb-0">
 
+@if(Auth::user()->level_id==1)
 				<!-- start grid -->
 				<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mt-5">
 					<div class="col-span-12 lg:col-span-4">
@@ -69,7 +70,7 @@
 					</div>
 				</div>
 				<!-- end grid -->
-
+@endif
 
 			</div>
 			<div class="card-body relative overflow-x-auto">

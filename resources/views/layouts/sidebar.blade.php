@@ -24,9 +24,11 @@
                             <li>
                                 <a href="/permohonan" class="pl-14 pr-4 py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">Permohonan</a>
                             </li>
+                            @if(Auth::user()->level_id==3 or Auth::user()->level_id==1)
                             <li>
                                 <a href="/permohonan/create" class="pl-14 pr-4 py-2 block text-[13.5px] font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">Buat Permohonan</a>
                             </li>
+                            @endif
                         </ul>
                     </li>
 
@@ -43,7 +45,7 @@
                             <span data-key="t-petunjuk"> Petunjuk Penggunaan</span>
                         </a>
                     </li>
-
+@if(Auth::user()->level_id==1)
                     <li>
                         <a href="javascript: void(0);" aria-expanded="false" class="nav-menu pl-6 pr-4 py-3 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
                             <i data-feather="users"></i>
@@ -58,7 +60,6 @@
                             </li>
                         </ul>
                     </li>
-
 
                     <li>
                         <a href="index.html" class="nav-menu pl-6 pr-4 py-3 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
@@ -92,18 +93,7 @@
                             </li>
                         </ul>
                     </li>
-
-                    <li>
-                        <form method="POST" action="{{ route('logout') }}" class="pl-6 pr-4 py-3 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
-
-                            <a :href="route('logout')"
-                            onclick="event.preventDefault();
-                            this.closest('form').submit();" hidden>
-                            <i data-feather="log-out"></i><span data-key="t-logout">{{ __('Log Out') }}</span>
-                        </a>
-                    </form>
-                </li>
-
+@endif
                 
             </ul>
 

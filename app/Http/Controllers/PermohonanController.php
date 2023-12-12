@@ -17,8 +17,13 @@ class PermohonanController extends Controller
     {
         $header = 'Permohonan';
         $title = 'Dashboard';
-        $page = 'Buat Permohonan';
-        $data = Permohonan::all();
+        $page = 'Permohonan';
+        if (Auth::user()->level_id==1 or Auth::user()->level_id==2) {
+            $data = Permohonan::all();
+        } else {
+            $data=Permohonan::where('id_user',Auth::user()->id)->get();
+        }
+        
         \LogActivity::addToLog('Membuka Halaman Permohonan');
         return view('permohonan.index', compact('header','title','page','data'));
     }
@@ -48,11 +53,11 @@ class PermohonanController extends Controller
             'nik_istri' => 'required',
             'nama_istri'  => 'required',
             'no_akta_nikah'  => 'required',
-            'upload_kk'  => 'required|file|max:1024',
-            'upload_ktpsuami' => 'required|file|max:1024',
-            'upload_ktpistri' => 'required|file|max:1024',
-            'upload_aktanikah' => 'required|file|max:1024',
-            'upload_f106' => 'required|file|max:1024',
+            'upload_kk'  => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+            'upload_ktpsuami' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+            'upload_ktpistri' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+            'upload_aktanikah' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+            'upload_f106' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
             'keterangan' => '',
         ]);
 
