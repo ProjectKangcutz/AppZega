@@ -94,26 +94,32 @@
 									</div>
 									<div class="col-span-10">
 										<div class="text-gray-500 dark:text-zinc-100">
-											<table class="table w-full pt-4 text-gray-700 dark:text-zinc-100">
-												<tr>
-													<th>No</th>
-													<th>Subject</th>
-													<th>URL</th>
-													<th>Method</th>
-													<th>Ip</th>
-													<th width="300px">User Agent</th>
-												</tr>
+											<table id="datatable" class="table w-full pt-4 text-gray-700 dark:text-zinc-100">
+												<thead>
+													<tr>
+														<th>No</th>
+														<th>Subject</th>
+														<th>URL</th>
+														<th>Method</th>
+														<th>Ip</th>
+														<th width="300px">User Agent</th>
+														<th>Created At</th>
+													</tr>
+												</thead>
 												@if($logs->count())
-												@foreach($logs as $key => $log)
-												<tr>
-													<td>{{ ++$key }}</td>
-													<td>{{ $log->subject }}</td>
-													<td class="text-success">{{ $log->url }}</td>
-													<td><label class="label label-info">{{ $log->method }}</label></td>
-													<td class="text-warning">{{ $log->ip }}</td>
-													<td class="text-danger">{{ $log->agent }}</td>
-												</tr>
-												@endforeach
+												<tbody>
+													@foreach($logs as $key => $log)
+													<tr>
+														<td>{{ ++$key }}</td>
+														<td>{{ $log->subject }}</td>
+														<td class="text-success">{{ $log->url }}</td>
+														<td><label class="label label-info">{{ $log->method }}</label></td>
+														<td class="text-warning">{{ $log->ip }}</td>
+														<td class="text-danger">{{ $log->agent }}</td>
+														<td>{{$log->created_at}}</td>
+													</tr>
+													@endforeach
+												</tbody>
 												@endif
 											</table>
 										</div>
@@ -131,6 +137,28 @@
 				<script src="{{asset('minia/libs/feather-icons/feather.min.js')}}"></script>
 
 				<script src="{{asset('minia/libs/flatpickr/flatpickr.min.js')}}"></script>
+
+				<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+				<!-- Required datatable js -->
+				<script src="{{asset('minia/libs/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+				<script src="{{asset('minia/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+				<!-- Buttons examples -->
+				<script src="{{asset('minia/libs/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
+				<script src="{{asset('minia/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js')}}"></script>
+				<script src="{{asset('minia/libs/jszip/jszip.min.js')}}"></script>
+				<script src="{{asset('minia/libs/pdfmake/build/pdfmake.min.js')}}"></script>
+				<script src="{{asset('minia/libs/pdfmake/build/vfs_fonts.js')}}"></script>
+				<script src="{{asset('minia/libs/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
+				<script src="{{asset('minia/libs/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
+				<script src="{{asset('minia/libs/datatables.net-buttons/js/buttons.colVis.min.js')}}"></script>
+
+				<!-- Responsive examples -->
+				<script src="{{asset('minia/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
+				<script src="{{asset('minia/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
+
+				<!-- Datatable init js -->
+				<script src="{{asset('minia/js/pages/datatables.init.js')}}"></script> 
 
 				<script src="{{asset('minia/js/app.js')}}"></script>
 

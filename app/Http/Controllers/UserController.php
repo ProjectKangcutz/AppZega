@@ -96,7 +96,7 @@ class UserController extends Controller
         $title = 'User';
         $page = 'Edit User';
         $data = User::find($id);
-        $logs = LogActivityModel::where('user_id',$data->id)->get();
+        $logs = LogActivityModel::where('user_id',$data->id)->latest();
         \LogActivity::addToLog('Membuka Edit User '.$data->name.'');
         return view('user.edit', compact('header','title','page','data','logs'));
     }

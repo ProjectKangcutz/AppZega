@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use App\Models\User;
+use App\Models\MasterStatus;
 
 class Permohonan extends Model
 {
@@ -35,5 +36,10 @@ class Permohonan extends Model
     public function user(): HasOne
     {
         return $this->hasOne(User::class, 'id', 'id_user');
+    }
+
+    public function status(): HasOne
+    {
+        return $this->hasOne(MasterStatus::class, 'id', 'status_pengajuan');
     }
 }

@@ -164,6 +164,6 @@ class PermohonanController extends Controller
             'permohonan' => $permohonan
         ];
         $pdf = PDF::loadView('permohonan.pdf', $data);
-        return $pdf->download('permohonan.pdf');
+        return $pdf->stream('permohonan.pdf');
     }
 }

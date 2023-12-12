@@ -16,7 +16,7 @@
                 <tr>
                     <td>ID</td>
                     <td>:</td>
-                    <td>{{ $permohonan->id }}</td>
+                    <td>{{ $permohonan->id }}/Pekanos/{{$permohonan->id_user}}/{{$permohonan->created_at->format('Y')}}</td>
                 </tr>
                 <tr>
                     <td>Tanggal</td>
@@ -46,7 +46,7 @@
                 <tr>
                     <td>Status Permohonan</td>
                     <td>:</td>
-                    <td>{{$permohonan->status_pengajuan}}</td>
+                    <td><span style="text-transform: capitalize;">{{$permohonan->status->nama_status}}</span></td>
                 </tr>
 
             </table>
