@@ -51,7 +51,7 @@
 							</div>
 							<div class="col-span-3">
 								<div class="flex flex-wrap justify-end">
-									<button type="button" class="btn bg-gray-50/50 border-transparent dark:bg-zinc-700 dark:text-gray-100"><i class="me-1"></i> Edit User</button>
+									<a href="{{route('user.edit',$data->id)}}" class="btn bg-gray-50/50 border-transparent dark:bg-zinc-700 dark:text-gray-100"><i class="me-1"></i> Edit User</a>
 								</div>
 							</div>
 						</div>

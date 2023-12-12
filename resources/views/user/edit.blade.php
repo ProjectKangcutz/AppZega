@@ -87,9 +87,9 @@
 										</div>
 									</div>
 									<div class="col-span-10">
-										<form action="{{route('user.update',$data->id)}}" method="get">
+										<form action="{{route('user.updatedetail',$data->id)}}" method="get">
+											@csrf
 											<div class="card-body">
-												@csrf
 												<div class="grid grid-cols-12 gap-5">
 													<div class="col-span-12 lg:col-span-12">
 														<div class="mb-4">
@@ -111,7 +111,7 @@
 														<div class="mb-4">
 															<label for="example-text-input" class="block font-medium text-gray-700 dark:text-gray-100 mb-2">Level Akses</label>
 															<select class="dark:bg-zinc-800 dark:border-zinc-700 w-full rounded border-gray-100 py-2.5 text-sm text-gray-500 focus:border focus:border-violet-500 focus:ring-0 dark:bg-zinc-700/50 dark:text-zinc-100" name="level_id">
-																<option selected>Select</option>
+																<option selected value="{{$data->level_id}}">Select</option>
 																<option value="1">Admin</option>
 																<option value="2">Operator</option>
 																<option value="3">Pengguna</option>

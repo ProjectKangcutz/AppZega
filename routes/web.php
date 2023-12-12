@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/user_pengguna', [UserController::class, 'indexpengguna'])->name('pengguna.index');
+    Route::get('/user/{id}/updatedetail', [UserController::class, 'updatedetail'])->name('user.updatedetail');
     Route::resource('user',UserController::class);
     Route::resource('daftar_unduhan',UnduhanController::class);
     Route::resource('petunjuk',PetunjukController::class);

@@ -42,7 +42,7 @@ class UserController extends Controller
     {
         $header = 'User Operator';
         $title = 'Konfigurasi';
-        $page = 'User Operator';
+        $page = 'Create User Operator';
         \LogActivity::addToLog('Membuka Halaman Tambah Operator');
         return view('user.create', compact('header','title','page'));
     }
@@ -79,7 +79,7 @@ class UserController extends Controller
     public function show($id)
     {
         $header = 'User';
-        $title = 'Detail';
+        $title = 'User';
         $page = 'Detail User';
         $data = User::find($id);
         $logs = LogActivityModel::where('user_id',$data->id)->get();
@@ -93,8 +93,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $header = 'User';
-        $title = 'Detail';
-        $page = 'Detail User';
+        $title = 'User';
+        $page = 'Edit User';
         $data = User::find($id);
         $logs = LogActivityModel::where('user_id',$data->id)->get();
         \LogActivity::addToLog('Membuka Edit User '.$data->name.'');
@@ -104,7 +104,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function updatedetail(Request $request, $id)
     {
         $request->validate([
             'name' => 'required',
@@ -123,7 +123,7 @@ class UserController extends Controller
             'level_id' => $request->level_id
         ]);
 
-         return redirect()->route('users.index')->with('success','User Has Been updated successfully');
+         return redirect()->route('user.index')->with('success','User Has Been updated successfully');
     }
 
     /**
