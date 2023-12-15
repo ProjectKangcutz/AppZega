@@ -57,8 +57,11 @@
 									<div>
 										<h5 class="text-16 mb-1 text-gray-700 dark:text-gray-100">No KK : {{$data->no_kk}}</h5>
 										<p class="text-gray-500 dark:text-zinc-100 text-13">Pemohon : {{$data->user->name}}</p>
+										@if(is_null($data->upload_draftkk))
+										
+										@else
 										<p class="text-gray-500 dark:text-zinc-100 text-13"><a href="{{asset($data->upload_draftkk)}}" class="btn text-white bg-sky-500 border-sky-500 hover:bg-sky-600 hover:border-sky-600 focus:bg-sky-600 focus:border-sky-600 focus:ring focus:ring-sky-500/30 active:bg-sky-600 active:border-sky-600" download="Draft KK {{$data->no_kk}}">Download Draft KK</a> </p>
-
+										@endif
 										<div class="flex flex-wrap items-start gap-2 text-13 mt-3">
 											<div class="text-gray-500 dark:text-zinc-100"><i class="mdi mdi-circle-medium me-1 text-green-500 align-middle ltr:mr-1 rtl:ml-1"></i>HP Pemohon : {{$data->user->no_hp}}</div>
 											<div class="text-gray-500 dark:text-zinc-100"><i class="mdi mdi-circle-medium me-1 text-green-500 align-middle ltr:mr-1 rtl:ml-1"></i>Email Pemohon : {{$data->user->email}}</div>
