@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Permohonan;
+use App\Models\MasterStatus;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Auth;
@@ -128,8 +129,9 @@ class PermohonanController extends Controller
         $title = 'Permohonan';
         $page = 'Detail Permohonan';
         $data = Permohonan::find($id);
+        $status = MasterStatus::all();
         \LogActivity::addToLog('Membuka Permohonan '.$data->no_kk.'');
-        return view('permohonan.detail', compact('header','title','page','data'));
+        return view('permohonan.detail', compact('header','title','page','data','status'));
     }
 
     /**
@@ -146,6 +148,32 @@ class PermohonanController extends Controller
     public function update(Request $request, Permohonan $permohonan)
     {
         //
+    }
+
+    public function updatestatus(Request $request, $id)
+    {
+        $request->validate([
+            'status_pengajuan' => 'required',
+            'keterangan' => 'required',
+            'upload_draftkk'  => 'mimes:pdf,doc,docx|max:2048',
+        ]);
+
+        // Upload Draft KK
+        if ($file_upload_draft = $request->file('upload_draftkk')) {
+            $destinationPath_upload_draft = 'document/draft';
+            $profileFile_upload_draft = date('YmdHis') . "." . $file_upload_draft->getClientOriginalExtension();
+            $simpan_upload_draft = $file_upload_draft->move($destinationPath_upload_draft, $profileFile_upload_draft);
+        }
+
+        $permohonan=Permohonan::find($id);
+        $permohonan->update([
+            'status_pengajuan' => $request->status_pengajuan,
+            'keterangan' => $request->keterangan,
+            'tgl_proses' => Carbon::now(),
+            'upload_draftkk' => $simpan_upload_draft
+        ]);
+        \LogActivity::addToLog('Melakukan Update Status Permohonan '.$permohonan->id.'');
+        return redirect()->back()->with('success','Permohonan Has Been updated successfully');
     }
 
     /**

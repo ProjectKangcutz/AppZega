@@ -86,11 +86,6 @@
 									<form action="{{route('permohonan.destroy',$item->id)}}" method="POST">
 										<a href="{{route('permohonan.generatepdf',$item->id)}}" class="btn text-white bg-violet-500 border-violet-500 hover:bg-violet-600 hover:border-violet-600 focus:bg-violet-600 focus:border-violet-600 focus:ring focus:ring-violet-500/30 active:bg-violet-600 active:border-violet-600"><i class="bx bx-download text-16 align-middle "></i></a>
 										<a href="{{route('permohonan.show',$item->id)}}" class="btn text-white bg-green-500 border-green-500 hover:bg-green-600 hover:border-green-600 focus:bg-green-600 focus:border-green-600 focus:ring focus:ring-green-500/30 active:bg-green-600 active:border-green-600"><i class="bx bx-show-alt text-16 align-middle "></i></a>
-										<a href="{{route('permohonan.edit',$item->id)}}" class="btn text-white bg-yellow-500 border-yellow-500 hover:bg-yellow-600 hover:border-yellow-600 focus:bg-yellow-600 focus:border-yellow-600 focus:ring focus:ring-yellow-500/30 active:bg-yellow-600 active:border-yellow-600"><i class="bx bx-edit-alt text-16 align-middle "></i></a>
-										@csrf
-										@method('DELETE')
-
-										<button type="submit" class="btn text-white bg-red-500 border-red-500 hover:bg-red-600 hover:border-red-600 focus:bg-red-600 focus:border-red-600 focus:ring focus:ring-red-500/30 active:bg-red-600 active:border-red-600"><i class="bx bx-trash-alt text-16 align-middle"></i></button>
 									</form>
 								</td>
 							</tr>

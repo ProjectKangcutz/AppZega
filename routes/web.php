@@ -42,6 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('petunjuk',PetunjukController::class);
 
     Route::get('/permohonan/{id}/generatepdf', [PermohonanController::class, 'generatepdf'])->name('permohonan.generatepdf');
+    Route::post('/permohonan/{id}/updatestatur', [PermohonanController::class, 'updatestatus'])->name('permohonan.updatestatus');
     Route::resource('permohonan',PermohonanController::class);
 });
 
