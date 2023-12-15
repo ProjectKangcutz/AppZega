@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <title>Login - Admin & Dashboard Template</title>
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta
-      content="Tailwind Admin & Dashboard Template"
-      name="description"
+    content="Tailwind Admin & Dashboard Template"
+    name="description"
     />
     <meta content="" name="Themesbrand" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="{{asset('minia/images/favicon.ico')}}" />
 
 
-   <link rel="stylesheet" href="{{asset('minia/libs/swiper/swiper-bundle.min.css')}}">
+    <link rel="stylesheet" href="{{asset('minia/libs/swiper/swiper-bundle.min.css')}}">
 
 
     <link rel="stylesheet" href="{{asset('minia/css/icons.css')}}" />
@@ -28,20 +28,20 @@
 
 
 </head>
-    
+
 <body data-mode="light" data-sidebar-size="lg">
 
 
-   
+
     <div class="container-fluid">
         <div class="h-screen md:overflow-hidden">
             <div class="grid grid-cols-1 md:grid-cols-12 ">
                 <div class="col-span-12 md:col-span-5 lg:col-span-4 xl:col-span-3 relative z-50">
                     <div class="w-full bg-white xl:p-12 p-10 dark:bg-zinc-800">
                         <div class="flex h-[90vh] flex-col">
-                                <div class="mx-auto">
+                            <div class="mx-auto">
                                 <a href="index.html" class="">
-                                    <img src="{{asset('minia/images/logo-sm.svg')}}" alt="" class="h-8 inline"> <span class="text-xl align-middle font-medium ltr:ml-2 rtl:mr-2 dark:text-white">PEKANOS</span>
+                                    <img src="{{asset('/A.svg')}}" alt="" class="h-64 inline">
                                 </a>
                             </div>
 
@@ -75,9 +75,26 @@
                                     <!-- Add reCAPTCHA field -->
                                     <div class="row mb-6">
                                         <div class="col justify-content-center text-center">
-                                    {!! NoCaptcha::display() !!}
+                                            {!! NoCaptcha::display() !!}
                                         </div>
                                     </div>
+
+                                    @if ($message = Session::get('success'))
+                                    <div class="card p-5 rounded bg-green-600 border-green-600">
+                                        <p class="text-white/60">{{ $message }}</p>
+                                    </div>
+                                    @endif
+
+                                    @if ($errors->any())
+                                    <div class="card p-5 rounded bg-red-400 border-red-400">
+                                        <p class="text-white/60"><span class="font-medium">Whoops!</span> Mohon maaf ada kesalahan dalam input anda :<br><br></p>
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                    @endif
 
                                     @if ($errors->has('g-recaptcha-response'))
                                     <span class="help-block text-danger">
@@ -130,69 +147,36 @@
                             <div class="col-span-8 col-start-3">
                                 <div class="swiper login-slider">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <i class="bx bxs-quote-alt-left text-green-600 text-5xl"></i>
-                                                <h3 class="mt-4 text-white text-22">“I feel confident imposing change on myself. It's a lot more progressing fun than looking back. That's why I ultricies enim at malesuada nibh diam on tortor neaded to throw curve balls.”</h3>
-                                                <div class="flex mt-6 mb-10 pt-4">
-                                                    <img src="{{asset('minia/images/users/avatar-1.jpg')}}" class="h-12 w-12 rounded-full" alt="...">
-                                                    <div class="flex-1 ltr:ml-3 rtl:mr-2 mb-4">
-                                                        <h5 class="font-size-18 text-white">Ilse R. Eaton</h5>
-                                                        <p class="mb-0 text-white/50">Manager
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <i class="bx bxs-quote-alt-left text-green-600 text-5xl"></i>
-                                                <h3 class="mt-4 text-white text-22">“I feel confident imposing change on myself. It's a lot more progressing fun than looking back. That's why I ultricies enim at malesuada nibh diam on tortor neaded to throw curve balls.”</h3>
-                                                <div class="flex mt-6 mb-10 pt-4">
-                                                    <img src="{{asset('minia/images/users/avatar-2.jpg')}}" class="h-12 w-12 rounded-full" alt="...">
-                                                    <div class="flex-1 ltr:ml-3 rtl:mr-2 mb-4">
-                                                        <h5 class="font-size-18 text-white">Mariya Willam</h5>
-                                                        <p class="mb-0 text-white/50">Designer
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <i class="bx bxs-quote-alt-left text-green-600 text-5xl"></i>
-                                                <h3 class="mt-4 text-white text-22">“I feel confident imposing change on myself. It's a lot more progressing fun than looking back. That's why I ultricies enim at malesuada nibh diam on tortor neaded to throw curve balls.”</h3>
-                                                <div class="flex mt-6 mb-10 pt-4">
-                                                    <img src="{{asset('minia/images/users/avatar-3.jpg')}}" class="h-12 w-12 rounded-full" alt="...">
-                                                    <div class="flex-1 ltr:ml-3 rtl:mr-2 mb-4">
-                                                        <h5 class="font-size-18 text-white">Jiya Jons</h5>
-                                                        <p class="mb-0 text-white/50">Developer
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-pagination"></div>
-                                </div>
+                                        <div class="swiper-slide text-center">
+                                           <h3 class="mt-4 text-white">“SELAMAT DATANG DI APLIKASI PEKANOS”</h3>
+                                           <h5 class="mt-2 text-white">PENCATATAN PERKAWINAN ONLINE SISTEM</h5>
+                                       </div>
+                                   </div>
+                               </div>
 
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                           </div>
+                       </div>
+
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
 
 
 
-    <script src="{{asset('minia/libs/@popperjs/core/umd/popper.min.js')}}"></script>
-    <script src="{{asset('minia/libs/feather-icons/feather.min.js')}}"></script>
-    <script src="{{asset('minia/libs/metismenujs/metismenujs.min.js')}}"></script>
-    <script src="{{asset('minia/libs/simplebar/simplebar.min.js')}}"></script>
-    <script src="{{asset('minia/libs/feather-icons/feather.min.js')}}"></script>
+   <script src="{{asset('minia/libs/@popperjs/core/umd/popper.min.js')}}"></script>
+   <script src="{{asset('minia/libs/feather-icons/feather.min.js')}}"></script>
+   <script src="{{asset('minia/libs/metismenujs/metismenujs.min.js')}}"></script>
+   <script src="{{asset('minia/libs/simplebar/simplebar.min.js')}}"></script>
+   <script src="{{asset('minia/libs/feather-icons/feather.min.js')}}"></script>
 
-    <script src="{{asset('minia/libs/swiper/swiper-bundle.min.js')}}"></script>
-    
-    <script src="{{asset('minia/js/pages/login.init.js')}}"></script>
+   <script src="{{asset('minia/libs/swiper/swiper-bundle.min.js')}}"></script>
 
-    <script src="{{asset('minia/js/app.js')}}"></script>
-    {!! NoCaptcha::renderJs() !!}
+   <script src="{{asset('minia/js/pages/login.init.js')}}"></script>
+
+   <script src="{{asset('minia/js/app.js')}}"></script>
+   {!! NoCaptcha::renderJs() !!}
 </body>
 
 </html>

@@ -77,7 +77,6 @@
                             @if(Auth::user()->level_id==1)
                             <div class="mb-3 text-right">
                                 <form action="{{ route('petunjuk.destroy',$item->id) }}" method="POST">
-                                    <a href="{{ route('petunjuk.edit',$item->id) }}" class="btn text-white bg-green-500 border-green-500 hover:bg-green-600 hover:border-green-600 focus:bg-green-600 focus:border-green-600 focus:ring focus:ring-green-500/30 active:bg-green-600 active:border-green-600"><i class="bx bx-edit-alt text-16 align-middle "></i></a>
                                     @csrf
                                     @method('DELETE')
 
