@@ -72,7 +72,9 @@
 							</div>
 							<div class="col-span-3">
 								<div class="flex flex-wrap justify-end">
-									<button type="button" class="btn bg-violet-500 border-violet-500 text-white hover:bg-violet-600 focus:ring ring-violet-50focus:bg-violet-600" data-tw-toggle="modal" data-tw-target="#modal-idCenter">Update Status Permohonan</button>
+									@if(Auth::user()->level_id==1 or Auth::user()->level_id==2)
+									<button type="button" class="btn bg-violet-500 border-violet-500 text-white hover:bg-violet-600 focus:ring ring-violet-50focus:bg-violet-600" data-tw-toggle="modal" data-tw-target="#modal-idCenter">Proses Permohonan</button>
+									@endif
 									<div class="modal relative z-50 hidden" id="modal-idCenter" aria-labelledby="modal-title" role="dialog" aria-modal="true">
 										<div class="fixed inset-0 z-50 overflow-hidden">
 											<div class="absolute inset-0 bg-black bg-opacity-50 transition-opacity modal-overlay"></div>
@@ -84,7 +86,7 @@
 															<div class="h-14 w-14 rounded-full bg-green-100 mx-auto">
 																<i class="mdi mdi-check-all text-2xl text-green-600 leading-[2.4]"></i>
 															</div>
-															<h2 class="text-xl mt-5 text-gray-700 dark:text-gray-100">Update Status Permohonan</h2>
+															<h2 class="text-xl mt-5 text-gray-700 dark:text-gray-100">Proses Permohonan</h2>
 
 															<div class="mb-4">
 																<div class="mb-3">

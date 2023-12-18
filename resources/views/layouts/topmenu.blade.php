@@ -3,15 +3,15 @@
         <div class="flex items-center justify-between w-full">
             <div class="topbar-brand flex items-center">
                 <div class="navbar-brand flex items-center justify-between shrink px-5 h-[70px] border-r bg-slate-50 border-r-gray-50 dark:border-zinc-700 dark:bg-zinc-800">
-                    <a href="#" class="flex items-center font-bold text-lg  dark:text-white">
-                        <img src="{{asset('minia/images/logo-sm.svg')}}" alt="" class="ltr:mr-2 rtl:ml-2 inline-block mt-1 h-6" />
+                    <a href="/dashboard" class="flex items-center font-bold text-lg  dark:text-white">
+                        <img src="{{asset('A.svg')}}" alt="" class="ltr:mr-2 rtl:ml-2 inline-block mt-1 h-20" />
                         <span class="hidden xl:block align-middle">PEKANOS</span>
                     </a>
                 </div>
                 <button type="button" class="text-gray-600 dark:text-white h-[70px] ltr:-ml-10 ltr:mr-6 rtl:-mr-10 rtl:ml-10 vertical-menu-btn" id="vertical-menu-btn">
                     <i class="fa fa-fw fa-bars"></i>
                 </button>
-<h5 class="font-semibold text-gray-700 dark:text-gray-100 text-lg" style="padding-left: 1rem;">PEKANOS <span class="text-gray-400 dark:text-zinc-100/60">Pencatatan Perkawinan Online Sistem</span></h5>
+                <h5 class="font-semibold text-gray-700 dark:text-gray-100 text-lg" style="padding-left: 1rem;">PEKANOS <span class="text-gray-400 dark:text-zinc-100/60">Pencatatan Perkawinan Online Sistem</span></h5>
             </div>
             <div class="flex items-center">
 
@@ -42,42 +42,42 @@
                     </div>
 
 
-                <div>
-                    <div class="dropdown relative ltr:mr-4 rtl:ml-4">
-                        <button type="button" class="flex items-center px-4 py-5 border-x border-gray-50 bg-gray-50/30 dropdown-toggle dark:bg-zinc-700 dark:border-zinc-600 dark:text-gray-100" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <img class="h-8 w-8 rounded-full ltr:xl:mr-2 rtl:xl:ml-2" src="{{asset('minia/images/users/avatar-1.jpg')}}" alt="Header Avatar">
-                            <span class="fw-medium hidden xl:block">{{Auth::user()->name}}</span>
-                            <i class="mdi mdi-chevron-down align-bottom hidden xl:block"></i>
-                        </button>
-                        <div class="dropdown-menu absolute top-0 ltr:-left-3 rtl:-right-3 z-50 hidden w-40 list-none rounded bg-white shadow dark:bg-zinc-800" id="profile/log">
-                            <div class="border border-gray-50 dark:border-zinc-600" aria-labelledby="navNotifications">
-                                <div class="dropdown-item dark:text-gray-100">
-                                    <a class="px-3 py-2 hover:bg-gray-50/50 block dark:hover:bg-zinc-700/50" href="apps-contacts-profile.html">
-                                        <i class="mdi mdi-face-man text-16 align-middle mr-1"></i> Profile
-                                    </a>
-                                </div>
-                                <div class="dropdown-item dark:text-gray-100">
-                                    <a class="px-3 py-2 hover:bg-gray-50/50 block dark:hover:bg-zinc-700/50" href="lock-screen.html">
-                                        <i class="mdi mdi-lock text-16 align-middle mr-1"></i> Lock Screen
-                                    </a>
-                                </div>
-                                <hr class="border-gray-50 dark:border-gray-700">
-                                <div class="dropdown-item dark:text-gray-100">
-                                    <form method="POST" action="{{ route('logout') }}" class="p-3 hover:bg-gray-50/50 block dark:hover:bg-zinc-700/50">
-                                        @csrf
+                    <div>
+                        <div class="dropdown relative ltr:mr-4 rtl:ml-4">
+                            <button type="button" class="flex items-center px-4 py-5 border-x border-gray-50 bg-gray-50/30 dropdown-toggle dark:bg-zinc-700 dark:border-zinc-600 dark:text-gray-100" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <img class="h-8 w-8 rounded-full ltr:xl:mr-2 rtl:xl:ml-2" src="{{asset('minia/images/users/avatar-1.jpg')}}" alt="Header Avatar">
+                                <span class="fw-medium hidden xl:block">{{Auth::user()->name}}</span>
+                                <i class="mdi mdi-chevron-down align-bottom hidden xl:block"></i>
+                            </button>
+                            <div class="dropdown-menu absolute top-0 ltr:-left-3 rtl:-right-3 z-50 hidden w-40 list-none rounded bg-white shadow dark:bg-zinc-800" id="profile/log">
+                                <div class="border border-gray-50 dark:border-zinc-600" aria-labelledby="navNotifications">
+                                    <div class="dropdown-item dark:text-gray-100">
+                                        <a class="px-3 py-2 hover:bg-gray-50/50 block dark:hover:bg-zinc-700/50" href="apps-contacts-profile.html">
+                                            <i class="mdi mdi-face-man text-16 align-middle mr-1"></i> Profile
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-item dark:text-gray-100">
+                                        <a class="px-3 py-2 hover:bg-gray-50/50 block dark:hover:bg-zinc-700/50" href="lock-screen.html">
+                                            <i class="mdi mdi-lock text-16 align-middle mr-1"></i> Lock Screen
+                                        </a>
+                                    </div>
+                                    <hr class="border-gray-50 dark:border-gray-700">
+                                    <div class="dropdown-item dark:text-gray-100">
+                                        <form method="POST" action="{{ route('logout') }}" class="p-3 hover:bg-gray-50/50 block dark:hover:bg-zinc-700/50">
+                                            @csrf
 
-                                        <x-dropdown-link :href="route('logout')"
-                                        onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                                        <i class="mdi mdi-logout text-16 align-middle mr-1"></i>{{ __('Log Out') }}
-                                    </x-dropdown-link>
-                                </form>
+                                            <x-dropdown-link :href="route('logout')"
+                                            onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                                            <i class="mdi mdi-logout text-16 align-middle mr-1"></i>{{ __('Log Out') }}
+                                        </x-dropdown-link>
+                                    </form>
 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
