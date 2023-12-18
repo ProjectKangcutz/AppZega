@@ -52,13 +52,13 @@
                             <div class="dropdown-menu absolute top-0 ltr:-left-3 rtl:-right-3 z-50 hidden w-40 list-none rounded bg-white shadow dark:bg-zinc-800" id="profile/log">
                                 <div class="border border-gray-50 dark:border-zinc-600" aria-labelledby="navNotifications">
                                     <div class="dropdown-item dark:text-gray-100">
-                                        <a class="px-3 py-2 hover:bg-gray-50/50 block dark:hover:bg-zinc-700/50" href="apps-contacts-profile.html">
+                                        <a class="px-3 py-2 hover:bg-gray-50/50 block dark:hover:bg-zinc-700/50" href="{{route('user.show',Auth::user()->id)}}">
                                             <i class="mdi mdi-face-man text-16 align-middle mr-1"></i> Profile
                                         </a>
                                     </div>
                                     <div class="dropdown-item dark:text-gray-100">
-                                        <a class="px-3 py-2 hover:bg-gray-50/50 block dark:hover:bg-zinc-700/50" href="lock-screen.html">
-                                            <i class="mdi mdi-lock text-16 align-middle mr-1"></i> Lock Screen
+                                        <a class="px-3 py-2 hover:bg-gray-50/50 block dark:hover:bg-zinc-700/50" href="/dashboard">
+                                            <i class="mdi mdi-home text-16 align-middle mr-1"></i> Dashboard
                                         </a>
                                     </div>
                                     <hr class="border-gray-50 dark:border-gray-700">
