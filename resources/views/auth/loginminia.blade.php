@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Login - Admin & Dashboard Template</title>
+    <title>PEKANOS - Pencatatan Perkawinan Online Sistem</title>
     <meta
     name="viewport"
     content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -41,7 +41,7 @@
                         <div class="flex h-[90vh] flex-col">
                             <div class="mx-auto">
                                 <a href="index.html" class="">
-                                    <img src="{{asset('/A.svg')}}" alt="" class="h-64 inline">
+                                    <img src="{{asset('/A.svg')}}" alt="" class="object-scale-down inline">
                                 </a>
                             </div>
 
