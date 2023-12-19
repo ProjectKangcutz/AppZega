@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Permohonan;
+use App\Models\User;
 use App\Models\MasterStatus;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -193,5 +194,51 @@ class PermohonanController extends Controller
         ];
         $pdf = PDF::loadView('permohonan.pdf', $data);
         return $pdf->stream('permohonan.pdf');
+    }
+
+    public function laporan()
+    {
+        $header = 'Permohonan';
+        $title = 'Permohonan';
+        $page = 'Buat Permohonan';
+        $data = Permohonan::all();
+        $opr = User::where('level_id','=',2)->get();
+
+        \LogActivity::addToLog('Membuka Halaman Laporan Permohonan');
+        return view('permohonan.laporan', compact('header','title','page','data','opr'));
+    }
+
+    public function lapbulanan(Request $request)
+    {
+        $header = 'Permohonan';
+        $title = 'Permohonan';
+        $page = 'Buat Permohonan';
+
+        $request->validate([
+            'bulan' => 'required',
+        ]);
+
+        $data = Permohonan::where('tgl_pengajuan','like',$request->bulan.'%')->get();
+       // dd($data);
+        $opr = User::where('level_id','=',2)->get();
+        \LogActivity::addToLog('Membuka Halaman Laporan Permohonan');
+        return view('permohonan.laporan', compact('header','title','page','data','opr'));
+    }
+
+    public function lapoperator(Request $request)
+    {
+        $header = 'Permohonan';
+        $title = 'Permohonan';
+        $page = 'Buat Permohonan';
+
+        $request->validate([
+            'opr' => 'required',
+        ]);
+
+        $data = Permohonan::where('id_user','=',$request->opr)->get();
+       // dd($data);
+        $opr = User::where('level_id','=',2)->get();
+        \LogActivity::addToLog('Membuka Halaman Laporan Permohonan');
+        return view('permohonan.laporan', compact('header','title','page','data','opr'));
     }
 }
