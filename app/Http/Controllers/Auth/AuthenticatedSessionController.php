@@ -28,7 +28,7 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-
+        \LogActivity::addToLog('Login ke dalam Sistem '.Auth::user()->name);
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
@@ -37,11 +37,15 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
+        \LogActivity::addToLog('Logout Sistem '.Auth::user()->name);
+
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+
+
 
         return redirect('/');
     }

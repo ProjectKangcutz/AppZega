@@ -149,7 +149,17 @@ class UserController extends Controller
         $data->delete();
         \LogActivity::addToLog('Menghapus User '.$data->name.'');
         return redirect()->route('user.index')
-                        ->with('success','User deleted successfully');
+        ->with('success','User deleted successfully');
+    }
+
+    public function activity()
+    {
+        $header = 'Log Activity';
+        $title = 'Activity';
+        $page = 'Log Activity';
+        $data = LogActivityModel::all();
+        \LogActivity::addToLog('Membuka Log Activity');
+        return view('activity', compact('header','title','page','data'));
     }
 
     

@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/user_pengguna', [UserController::class, 'indexpengguna'])->name('pengguna.index');
     Route::get('/user/{id}/updatedetail', [UserController::class, 'updatedetail'])->name('user.updatedetail');
     Route::get('/user/{id}/updatepass', [UserController::class, 'updatepass'])->name('user.updatepass');
+    Route::get('/log_activity', [UserController::class, 'activity'])->name('activity');
     Route::resource('user',UserController::class);
     Route::resource('daftar_unduhan',UnduhanController::class);
     Route::resource('petunjuk',PetunjukController::class);
