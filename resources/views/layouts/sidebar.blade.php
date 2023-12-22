@@ -45,7 +45,7 @@
                             <span data-key="t-petunjuk"> Petunjuk Penggunaan</span>
                         </a>
                     </li>
-@if(Auth::user()->level_id==1)
+                    @if(Auth::user()->level_id==1)
                     <li>
                         <a href="javascript: void(0);" aria-expanded="false" class="nav-menu pl-6 pr-4 py-3 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
                             <i data-feather="users"></i>
@@ -76,12 +76,12 @@
                             
                         </ul>
                     </li>
-@endif
-                
-            </ul>
+                    @endif
+                    
+                </ul>
 
+            </div>
+            <!-- Sidebar -->
         </div>
-        <!-- Sidebar -->
     </div>
-</div>
     <!-- Left Sidebar End -->

@@ -38,7 +38,11 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'g-recaptcha-response' => ['required', 'captcha'],
-        ]);
+        ],
+        [ 'required' => 'Kolom :attribute tidak boleh kosong.',
+            'unique' => 'Kolom :attribute sudah terdaftar.',
+        'numeric' => 'Kolom :attribute hanya boleh angka 16 digit.',
+        'max' => 'Maximal File Size adalah 1024kb']);
 
         $user = User::create([
             'name' => $request->name,

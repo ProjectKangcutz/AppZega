@@ -61,7 +61,10 @@ class PermohonanController extends Controller
             'upload_aktanikah' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
             'upload_f106' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
             'keterangan' => '',
-        ]);
+        ],
+        [ 'required' => 'Kolom :attribute tidak boleh kosong.',
+        'numeric' => 'Kolom :attribute hanya boleh angka 16 digit.',
+        'max' => 'Maximal File Size adalah 1024kb']);
 
         // Upload KK
         if ($file_uploadkk = $request->file('upload_kk')) {
