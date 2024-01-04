@@ -202,6 +202,9 @@
 										<div class="basis-1/4 bg-gray-50 dark:bg-zinc-600 dark:text-gray-100 p-3 rounded-md">
 											<a href="/{{$data->upload_aktanikah}}"><img class="inline-block h-100 w-100 rounded ring-2 ring-white dark:ring-zinc-500" src="{{asset($data->upload_aktanikah)}}" alt=""></a>
 										</div>
+										<div class="basis-1/4 bg-gray-50 dark:bg-zinc-600 dark:text-gray-100 p-3 rounded-md">
+											<a href="/{{$data->upload_aktanikah}}"><img class="inline-block h-100 w-100 rounded ring-2 ring-white dark:ring-zinc-500" src="{{asset($data->upload_f106)}}" alt=""></a>
+										</div>
 									</div>
 								</div>
 							</div>

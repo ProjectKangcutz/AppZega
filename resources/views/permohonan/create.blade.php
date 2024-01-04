@@ -104,11 +104,6 @@
 								<label for="example-text-input" class="block font-medium text-gray-700 dark:text-gray-100 mb-2">Upload Formulir Perubahan Data (F1-06)</label>
 								<input type="file" name="upload_f106" class="w-full rounded border-gray-100 py-2.5 text-sm text-gray-500 focus:border focus:border-violet-500 focus:ring-0 dark:bg-zinc-700/50 dark:border-zinc-600 dark:text-zinc-100" id="example-time-input">
 							</div>
-							<div class="mb-4">
-								<label for="example-text-input" class="block font-medium text-gray-700 dark:text-gray-100 mb-2">Keterangan</label>
-								<textarea id="message" name="keterangan" rows="4" class="block p-2.5 w-full text-gray-700 dark:text-zinc-100 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Keterangan ..."></textarea>
-							</div>
-
 						</div>
 					</div>
 
