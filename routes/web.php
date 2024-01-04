@@ -44,6 +44,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/permohonan/{id}/generatepdf', [PermohonanController::class, 'generatepdf'])->name('permohonan.generatepdf');
     Route::post('/permohonan/{id}/updatestatur', [PermohonanController::class, 'updatestatus'])->name('permohonan.updatestatus');
+    Route::post('/permohonan/{id}/updatesdata', [PermohonanController::class, 'updatedata'])->name('permohonan.updatedata');
     Route::get('/permohonan/laporan', [PermohonanController::class, 'laporan'])->name('permohonan.laporan');
     Route::get('/permohonan/lapbulanan', [PermohonanController::class, 'lapbulanan'])->name('permohonan.lapbulanan');
     Route::get('/permohonan/lapoperator', [PermohonanController::class, 'lapoperator'])->name('permohonan.lapoperator');
